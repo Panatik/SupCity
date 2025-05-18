@@ -1,13 +1,18 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
 
 public class NPC_Controller : MonoBehaviour
 {
     public Node currentNode;
     public List<Node> path = new List<Node>();
+    private SpriteRenderer spriteRenderer;
+
+    private void Start()
+    {
+        spriteRenderer = GetComponent<SpriteRenderer>();
+    }
 
     private void Update()
     {
@@ -19,7 +24,18 @@ public class NPC_Controller : MonoBehaviour
         if (path.Count > 0)
         {
             int x = 0;
-            transform.position = Vector3.MoveTowards(transform.position, new Vector3(path[x].transform.position.x, path[x].transform.position.y, -2), 3 * Time.deltaTime);
+            Vector3 targetPos = new Vector3(path[x].transform.position.x, path[x].transform.position.y, -2);
+            Vector3 direction = (targetPos - transform.position).normalized;
+
+            transform.position = Vector3.MoveTowards(transform.position, targetPos, 3 * Time.deltaTime);
+
+            if (Mathf.Abs(direction.x) > Mathf.Abs(direction.y))
+            {
+                if (direction.x > 0)
+                    spriteRenderer.flipX = true;
+                else if (direction.x < 0)
+                    spriteRenderer.flipX = false; 
+            }
 
             if (Vector2.Distance(transform.position, path[x].transform.position) < 0.1f)
             {
@@ -39,10 +55,10 @@ public class NPC_Controller : MonoBehaviour
 
     private void OnDrawGizmos()
     {
-        if(path.Count > 0) 
+        if (path.Count > 0)
         {
             Gizmos.color = Color.blue;
-            for (int i = 1; i < path.Count; i++) 
+            for (int i = 1; i < path.Count; i++)
             {
                 Gizmos.DrawLine(path[i].transform.position, path[i - 1].transform.position);
             }
