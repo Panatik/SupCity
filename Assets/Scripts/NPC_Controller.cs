@@ -1,19 +1,30 @@
+<<<<<<< HEAD
 using System.Collections.Generic;
 using UnityEngine;
+=======
+ï»¿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UI;
+>>>>>>> 8634496 (implementation of humans with moving animation and hunger bar)
 
 public class NPC_Controller : MonoBehaviour
 {
     public Node currentNode;
     public List<Node> path = new List<Node>();
     private SpriteRenderer spriteRenderer;
+<<<<<<< HEAD
     public Node targetNode;
 
     private int currentPathIndex = 0;
     public float speed = 3f;
+=======
+>>>>>>> 8634496 (implementation of humans with moving animation and hunger bar)
 
     private void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
+<<<<<<< HEAD
 
         // Si currentNode n'est pas défini, on le détecte automatiquement
         if (currentNode == null)
@@ -37,6 +48,8 @@ public class NPC_Controller : MonoBehaviour
             targetNode = nodes[Random.Range(0, nodes.Length)];
             RecalculatePath();
         }
+=======
+>>>>>>> 8634496 (implementation of humans with moving animation and hunger bar)
     }
 
     private void Update()
@@ -46,8 +59,26 @@ public class NPC_Controller : MonoBehaviour
 
     private void FollowPath()
     {
+<<<<<<< HEAD
         if (path == null || path.Count == 0 || currentPathIndex >= path.Count)
             return;
+=======
+        if (path.Count > 0)
+        {
+            int x = 0;
+            Vector3 targetPos = new Vector3(path[x].transform.position.x, path[x].transform.position.y, -2);
+            Vector3 direction = (targetPos - transform.position).normalized;
+
+            transform.position = Vector3.MoveTowards(transform.position, targetPos, 3 * Time.deltaTime);
+
+            if (Mathf.Abs(direction.x) > Mathf.Abs(direction.y))
+            {
+                if (direction.x > 0)
+                    spriteRenderer.flipX = true;
+                else if (direction.x < 0)
+                    spriteRenderer.flipX = false; 
+            }
+>>>>>>> 8634496 (implementation of humans with moving animation and hunger bar)
 
         Node nextNode = path[currentPathIndex];
         Vector3 targetPos = new Vector3(nextNode.transform.position.x, nextNode.transform.position.y, 0);
@@ -115,7 +146,11 @@ public class NPC_Controller : MonoBehaviour
 
     private void OnDrawGizmos()
     {
+<<<<<<< HEAD
         if (path != null && path.Count > 1)
+=======
+        if (path.Count > 0)
+>>>>>>> 8634496 (implementation of humans with moving animation and hunger bar)
         {
             Gizmos.color = Color.blue;
             for (int i = 1; i < path.Count; i++)
