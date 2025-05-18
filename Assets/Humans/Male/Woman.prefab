@@ -10,11 +10,18 @@ GameObject:
   m_Component:
   - component: {fileID: 4925716056359879487}
   - component: {fileID: 5791157460383294551}
+<<<<<<< HEAD
 <<<<<<<< HEAD:Assets/PNJ/Circle.prefab
   - component: {fileID: 1835333876958400324}
   - component: {fileID: 2233252671271537925}
 ========
   - component: {fileID: 5523586922276465527}
+=======
+  - component: {fileID: 5523586922276465527}
+<<<<<<<< HEAD:Assets/Humans/Female/Woman.prefab
+  - component: {fileID: 1835333876958400324}
+========
+>>>>>>> 8634496 (implementation of humans with moving animation and hunger bar)
 >>>>>>>> 8634496 (implementation of humans with moving animation and hunger bar):Assets/Humans/Male/Woman.prefab
   m_Layer: 0
   m_Name: Woman
@@ -32,7 +39,15 @@ Transform:
   m_GameObject: {fileID: 1568319584691381255}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+<<<<<<< HEAD
   m_LocalPosition: {x: 0, y: 0, z: 0}
+=======
+<<<<<<<< HEAD:Assets/Humans/Female/Woman.prefab
+  m_LocalPosition: {x: 3.71, y: 0.13, z: 0}
+========
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+>>>>>>>> 8634496 (implementation of humans with moving animation and hunger bar):Assets/Humans/Male/Woman.prefab
+>>>>>>> 8634496 (implementation of humans with moving animation and hunger bar)
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -82,12 +97,28 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
+<<<<<<< HEAD
   m_Sprite: {fileID: -7715902427486114116, guid: a0390088591d7a944902d1c0a85c7bf3, type: 3}
+=======
+<<<<<<<< HEAD:Assets/Humans/Female/Woman.prefab
+  m_Sprite: {fileID: -1275391637157308820, guid: 14476355d0a178d4a970642d1f5bcc0d, type: 3}
+========
+  m_Sprite: {fileID: -7715902427486114116, guid: a0390088591d7a944902d1c0a85c7bf3, type: 3}
+>>>>>>>> 8634496 (implementation of humans with moving animation and hunger bar):Assets/Humans/Male/Woman.prefab
+>>>>>>> 8634496 (implementation of humans with moving animation and hunger bar)
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
+<<<<<<< HEAD
   m_Size: {x: 0.15, y: 0.37}
+=======
+<<<<<<<< HEAD:Assets/Humans/Female/Woman.prefab
+  m_Size: {x: 0.53333336, y: 0.8}
+========
+  m_Size: {x: 0.15, y: 0.37}
+>>>>>>>> 8634496 (implementation of humans with moving animation and hunger bar):Assets/Humans/Male/Woman.prefab
+>>>>>>> 8634496 (implementation of humans with moving animation and hunger bar)
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -96,12 +127,17 @@ SpriteRenderer:
 --- !u!95 &5523586922276465527
 Animator:
   serializedVersion: 7
+<<<<<<< HEAD
+=======
+<<<<<<<< HEAD:Assets/Humans/Female/Woman.prefab
+>>>>>>> 8634496 (implementation of humans with moving animation and hunger bar)
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1568319584691381255}
   m_Enabled: 1
+<<<<<<< HEAD
 <<<<<<<< HEAD:Assets/PNJ/Circle.prefab
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 162e8aca79314864bb10aa0475a69f42, type: 3}
@@ -113,17 +149,39 @@ Animator:
   speed: 3
 --- !u!114 &2233252671271537925
 MonoBehaviour:
+=======
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: ec5c2c9218aa41d41af71e4bc9db9950, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1835333876958400324
+MonoBehaviour:
+========
+>>>>>>>> 8634496 (implementation of humans with moving animation and hunger bar):Assets/Humans/Male/Woman.prefab
+>>>>>>> 8634496 (implementation of humans with moving animation and hunger bar)
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1568319584691381255}
   m_Enabled: 1
+<<<<<<< HEAD
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 04faf86003b8e85499e9e36f1bb010c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 ========
+=======
+>>>>>>> 8634496 (implementation of humans with moving animation and hunger bar)
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 94f4e9a83e4e6e9489ea63e9d32f8465, type: 2}
   m_CullingMode: 0
@@ -137,4 +195,7 @@ MonoBehaviour:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+<<<<<<< HEAD
 >>>>>>>> 8634496 (implementation of humans with moving animation and hunger bar):Assets/Humans/Male/Woman.prefab
+=======
+>>>>>>> 8634496 (implementation of humans with moving animation and hunger bar)
