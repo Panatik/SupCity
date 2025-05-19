@@ -9,10 +9,10 @@ TagManager:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Buildings
   - Water
   - UI
-  - 
+  - Map
   - 
   - 
   - 
@@ -41,6 +41,9 @@ TagManager:
   m_SortingLayers:
   - name: Map
     uniqueID: 892644797
+    locked: 0
+  - name: Buildings
+    uniqueID: 3757507861
     locked: 0
   - name: Default
     uniqueID: 0

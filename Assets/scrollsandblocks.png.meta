@@ -1,10 +1,16 @@
 fileFormatVersion: 2
-guid: ec905da13c29e7d4cae7191c560b6596
+guid: f25e0c6d3b1ac8141b345a974da0867e
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -7411974349392773033
-    second: House_0
+      213: 1891798500667387940
+    second: scrollsandblocks_0
+  - first:
+      213: -7389116511431112119
+    second: scrollsandblocks_1
+  - first:
+      213: 6364697052581577472
+    second: scrollsandblocks_2
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -46,12 +52,12 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
-  alignment: 9
-  spritePivot: {x: 0.5073346, y: 0.112636186}
-  spritePixelsToUnits: 40
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -113,75 +119,67 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: House_0
+      name: scrollsandblocks_0
       rect:
         serializedVersion: 2
-        x: 7
-        y: 6
-        width: 66
-        height: 101
-      alignment: 6
+        x: 320
+        y: 182
+        width: 33
+        height: 127
+      alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
-      outline:
-      - - {x: 29, y: -23.5}
-        - {x: 31, y: -21.5}
-        - {x: 31, y: -16.5}
-        - {x: 33, y: -16.5}
-        - {x: 33, y: -11.419682}
-        - {x: 31, y: -9.5}
-        - {x: 31, y: -6.5}
-        - {x: 33, y: -6.5}
-        - {x: 33, y: -1.5}
-        - {x: 31, y: 0.5}
-        - {x: 31, y: 3.5}
-        - {x: 33, y: 2.5}
-        - {x: 33, y: 8.5}
-        - {x: 31, y: 10.5}
-        - {x: 31, y: 13.5}
-        - {x: 33, y: 13.5}
-        - {x: 33, y: 18.5}
-        - {x: 4, y: 46.5}
-        - {x: 4, y: 50.5}
-        - {x: -4, y: 50.5}
-        - {x: -4, y: 46.5}
-        - {x: -33, y: 18.5}
-        - {x: -33, y: 13.5}
-        - {x: -31, y: 13.5}
-        - {x: -31, y: 10.5}
-        - {x: -33, y: 8.5}
-        - {x: -33, y: 2.9196815}
-        - {x: -31, y: 3.5}
-        - {x: -31, y: 0.5}
-        - {x: -33, y: -1.5}
-        - {x: -33, y: -6.5}
-        - {x: -31, y: -6.5}
-        - {x: -31, y: -9.5}
-        - {x: -33, y: -11.5}
-        - {x: -33, y: -16.5}
-        - {x: -31, y: -16.5}
-        - {x: -31, y: -22.5}
-        - {x: -29, y: -22.5}
-        - {x: -29, y: -50.5}
-        - {x: -24, y: -50.5}
-        - {x: -23, y: -49.5}
-        - {x: -19.157959, y: -49.568607}
-        - {x: -17, y: -47.5}
-        - {x: -9, y: -47.5}
-        - {x: -7, y: -49.5}
-        - {x: -3.2166977, y: -49.59458}
-        - {x: -2, y: -50.5}
-        - {x: 2, y: -50.5}
-        - {x: 3, y: -49.5}
-        - {x: 23, y: -49.5}
-        - {x: 24, y: -50.5}
-        - {x: 29, y: -50.5}
+      outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 750032c7990632990800000000000000
-      internalID: -7411974349392773033
+      spriteID: 42075e296b4014a10800000000000000
+      internalID: 1891798500667387940
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: scrollsandblocks_1
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 0
+        width: 192
+        height: 193
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 94acc2c9ea5947990800000000000000
+      internalID: -7389116511431112119
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: scrollsandblocks_2
+      rect:
+        serializedVersion: 2
+        x: 354
+        y: 191
+        width: 92
+        height: 98
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 003c91a6f32f35850800000000000000
+      internalID: 6364697052581577472
       vertices: []
       indices: 
       edges: []
@@ -190,8 +188,8 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: fa2f3644a48e60248adae4a232b857d4
-    internalID: 1640640698
+    spriteID: e87c55d2ea0a5544c8469a5d0d66f4fd
+    internalID: 0
     vertices: []
     indices: 
     edges: []
@@ -200,7 +198,9 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      House_0: -7411974349392773033
+      scrollsandblocks_0: 1891798500667387940
+      scrollsandblocks_1: -7389116511431112119
+      scrollsandblocks_2: 6364697052581577472
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
