@@ -10,6 +10,9 @@ public class Node : MonoBehaviour
     public float gScore;
     public float hScore;
 
+    // Ajout d'un booléen pour bloquer le node
+    public bool isBlocked = false;
+
     public float FScore() 
     {
         return gScore + hScore;
@@ -17,7 +20,7 @@ public class Node : MonoBehaviour
 
     private void OnDrawGizmos()
     {
-        Gizmos.color = Color.blue;
+        Gizmos.color = isBlocked ? Color.red : Color.blue;
 
         if (connections.Count > 0)
         {

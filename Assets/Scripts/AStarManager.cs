@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEngine.RuleTile.TilingRuleOutput;
 
 public class AStarManager : MonoBehaviour
 {
@@ -58,6 +59,9 @@ public class AStarManager : MonoBehaviour
 
             foreach (Node connectedNode in currentNode.connections)
             {
+                if (connectedNode.isBlocked)
+                    continue;
+
                 float heldGScore = currentNode.gScore + Vector2.Distance(currentNode.transform.position, connectedNode.transform.position);
 
                 if (heldGScore < connectedNode.gScore)
