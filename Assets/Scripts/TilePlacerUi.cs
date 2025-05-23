@@ -32,6 +32,8 @@ public class TilePlacerUi : MonoBehaviour
 
     private HousePlacer housePlacer;
 
+    private Vector3Int? lastPlacedObjectCell = null;
+
     public enum ObjectSize
     {
         OneByOne,
@@ -133,6 +135,7 @@ public class TilePlacerUi : MonoBehaviour
         if (Input.GetMouseButtonUp(0))
         {
             lastPlacedCell = null;
+            lastPlacedObjectCell = null;
         }
 
         if (isDragging)
@@ -200,34 +203,56 @@ public class TilePlacerUi : MonoBehaviour
     void PlaceObject(Vector3 worldPos)
     {
         float cellSize = targetTilemap.cellSize.x;
-        Vector3Int baseCell = targetTilemap.WorldToCell(worldPos);
+
+        // Prend la vraie position "snappée" pour comparaison
+        Vector3 snappedWorldPos = SnapToGrid(worldPos);
+        Vector3Int cell = targetTilemap.WorldToCell(snappedWorldPos);
+
+        // Ne repose pas si même case que la dernière
+        if (lastPlacedObjectCell.HasValue && lastPlacedObjectCell.Value == cell)
+            return;
+
         if (currentObjectSize == ObjectSize.OneByOne)
         {
-            baseCell.x -= 1;
-            baseCell.y -= 1;
+            cell.x -= 1;
+            cell.y -= 1;
+
+            // Vérifie s'il y a déjà un objet route à cet endroit
+            Collider2D hit = Physics2D.OverlapPoint(snappedWorldPos, LayerMask.GetMask("Buildings"));
+            if (hit != null && hit.CompareTag("Route"))
+            {
+                // On a déjà une route ici
+                return;
+            }
         }
 
         Vector2 size = new Vector2(2f * cellSize, 2f * cellSize);
-        if (CanPlaceAt(baseCell) && IsAreaClear(worldPos, size))
+        if (CanPlaceAt(cell) && IsAreaClear(snappedWorldPos, size))
         {
-            //Instantiate(selectedObject, worldPos, Quaternion.identity);
-            GameObject placed = Instantiate(selectedObject, worldPos, Quaternion.identity);
+            GameObject placed = Instantiate(selectedObject, snappedWorldPos, Quaternion.identity);
 
-            // Ajoute un identifiant à l'objet
+            if (selectedObject.CompareTag("Buildings"))
+            {
+                selectedObject = null;
+                Destroy(currentPreview);
+            }
+            else {
+                if (currentPreview)
+                    Destroy(currentPreview);
+                currentPreview = Instantiate(previewObjects[selectedIndex]);
+                MakePreview(currentPreview);
+            }
+
             PlaceableObject id = placed.AddComponent<PlaceableObject>();
             id.objectIndex = selectedIndex;
 
-            // Détruit l'ancienne preview
-            if (currentPreview)
+            /*if (currentPreview)
                 Destroy(currentPreview);
-
-            // Recrée la preview à la souris
             currentPreview = Instantiate(previewObjects[selectedIndex]);
-            MakePreview(currentPreview);
+            MakePreview(currentPreview);*/
 
-            // BLOQUER LES NODES SOUS LA MAISON
-            Collider2D[] nodeHits = Physics2D.OverlapBoxAll(worldPos, size, 0f, LayerMask.GetMask("Nodes"));
-            Debug.Log("Nodes trouvés sous la maison: " + nodeHits.Length);
+            // Marque la cellule comme dernière utilisée
+            lastPlacedObjectCell = cell;
 
             if (housePlacer != null)
             {
