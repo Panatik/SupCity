@@ -2,17 +2,20 @@
 %TAG !u! tag:unity3d.com,2011:
 --- !u!78 &1
 TagManager:
-  serializedVersion: 2
-  tags: []
+  serializedVersion: 3
+  tags:
+  - Wall
+  - Route
+  - Buildings
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Buildings
   - Water
   - UI
-  - 
-  - 
+  - Map
+  - Nodes
   - 
   - 
   - 
@@ -38,6 +41,14 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Map
+    uniqueID: 892644797
+    locked: 0
+  - name: Buildings
+    uniqueID: 3757507861
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
+  m_RenderingLayers:
+  - Default
