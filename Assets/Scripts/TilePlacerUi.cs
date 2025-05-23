@@ -14,17 +14,35 @@ public class TilePlacerUi : MonoBehaviour
     public List<TileBase> wallTiles;
 
     private TileBase selectedTile = null;
+    private Vector3Int? lastPlacedCell = null;
     private GameObject selectedObject = null;
 
     public GameObject[] placeableObjects;
     public GameObject[] previewObjects;
     private GameObject currentPreview;
 
+    private Vector3Int? draggedTileCell = null;
+    private TileBase draggedTile = null;
+
     private GameObject draggedObject;
     private Vector3 originalPosition;
     private bool isDragging = false;
 
     private int selectedIndex = -1;
+
+    private HousePlacer housePlacer;
+
+    public enum ObjectSize
+    {
+        OneByOne,
+        TwoByTwo
+    }
+    private ObjectSize currentObjectSize = ObjectSize.TwoByTwo;
+
+    void Start()
+    {
+        housePlacer = FindFirstObjectByType<HousePlacer>();
+    }
 
     public void SetToolMode(int mode)
     {
@@ -57,11 +75,16 @@ public class TilePlacerUi : MonoBehaviour
             selectedObject = placeableObjects[index];
             currentPreview = Instantiate(previewObjects[index]);
             MakePreview(currentPreview);
+
+            // Définis la taille automatiquement (ajuste selon ta logique ou un tableau)
+            currentObjectSize = (selectedObject.name.Contains("Road")) ? ObjectSize.OneByOne : ObjectSize.TwoByTwo;
         }
     }
 
     public void SelectTile(int index)
     {
+        if (currentPreview)
+            Destroy(currentPreview);
         selectedObject = null;
         if (index >= 0 && index < placeableTiles.Count)
             selectedTile = placeableTiles[index];
@@ -72,8 +95,8 @@ public class TilePlacerUi : MonoBehaviour
         foreach (var sr in obj.GetComponentsInChildren<SpriteRenderer>())
             sr.color = new Color(0f, 0.5f, 1f, 0.5f); // bleu transparent
 
-        Collider2D col = obj.GetComponent<Collider2D>();
-        if (col) col.enabled = false;
+        foreach (var col in obj.GetComponentsInChildren<Collider2D>())
+            col.enabled = false;
     }
 
     void Update()
@@ -86,12 +109,12 @@ public class TilePlacerUi : MonoBehaviour
         if (EventSystem.current.IsPointerOverGameObject())
             return;
 
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButton(0))
         {
             switch (currentMode)
             {
                 case ToolMode.Place:
-                    if (selectedTile != null) PlaceTile(intersectionPos);
+                    if (selectedTile != null) PlaceTile(mouseWorldPos);
                     else if (selectedObject != null) PlaceObject(intersectionPos);
                     break;
 
@@ -107,12 +130,28 @@ public class TilePlacerUi : MonoBehaviour
             }
         }
 
+        if (Input.GetMouseButtonUp(0))
+        {
+            lastPlacedCell = null;
+        }
+
         if (isDragging)
         {
             currentPreview.transform.position = intersectionPos;
 
             if (Input.GetMouseButtonUp(0))
                 EndMove(intersectionPos);
+        }
+
+        if (!isDragging && currentPreview)
+        {
+            Vector3Int cellPos = targetTilemap.WorldToCell(Input.mousePosition);
+            currentPreview.transform.position = targetTilemap.GetCellCenterWorld(cellPos);
+        }
+        else if (isDragging && draggedTile != null && currentPreview)
+        {
+            Vector3Int cellPos = targetTilemap.WorldToCell(Input.mousePosition);
+            currentPreview.transform.position = targetTilemap.GetCellCenterWorld(cellPos);
         }
 
         // La preview suit la souris si pas en déplacement
@@ -122,27 +161,51 @@ public class TilePlacerUi : MonoBehaviour
 
     Vector3 SnapToGrid(Vector3 pos)
     {
+        Vector3Int cell = targetTilemap.WorldToCell(pos);
         float cellSize = targetTilemap.cellSize.x;
-        float x = Mathf.Round(pos.x / cellSize) * cellSize;
-        float y = Mathf.Round(pos.y / cellSize) * cellSize;
-        return new Vector3(x, y, 0f);
+
+        if (currentObjectSize == ObjectSize.OneByOne)
+        {
+            // Route : centré sur une case
+            return targetTilemap.GetCellCenterWorld(cell);
+        }
+        else // TwoByTwo (Maison)
+        {
+            // On décale la sélection d'un demi vers le bas et la gauche
+            Vector3 adjustedPos = pos - new Vector3(cellSize / 2f, cellSize / 2f, 0f);
+            Vector3Int bottomLeftCell = targetTilemap.WorldToCell(adjustedPos);
+            Vector3 bottomLeftWorld = targetTilemap.GetCellCenterWorld(bottomLeftCell);
+
+            // Reviens au centre de 2x2 : ajout d'une demi-case en x et y
+            return bottomLeftWorld + new Vector3(cellSize / 2f, cellSize / 2f, 0f);
+        }
     }
 
     void PlaceTile(Vector3 worldPos)
     {
         Vector3Int cellPos = targetTilemap.WorldToCell(worldPos);
+
+        if (lastPlacedCell.HasValue && lastPlacedCell.Value == cellPos)
+            return; // on a déjà posé une tile ici
+
         TileBase currentTile = targetTilemap.GetTile(cellPos);
 
         if (!wallTiles.Contains(currentTile) && currentTile != null && !placeableTiles.Contains(currentTile))
+        {
             targetTilemap.SetTile(cellPos, selectedTile);
+            lastPlacedCell = cellPos; // mise à jour
+        }
     }
 
     void PlaceObject(Vector3 worldPos)
     {
         float cellSize = targetTilemap.cellSize.x;
         Vector3Int baseCell = targetTilemap.WorldToCell(worldPos);
-        baseCell.x -= 1;
-        baseCell.y -= 1;
+        if (currentObjectSize == ObjectSize.OneByOne)
+        {
+            baseCell.x -= 1;
+            baseCell.y -= 1;
+        }
 
         Vector2 size = new Vector2(2f * cellSize, 2f * cellSize);
         if (CanPlaceAt(baseCell) && IsAreaClear(worldPos, size))
@@ -161,6 +224,15 @@ public class TilePlacerUi : MonoBehaviour
             // Recrée la preview à la souris
             currentPreview = Instantiate(previewObjects[selectedIndex]);
             MakePreview(currentPreview);
+
+            // BLOQUER LES NODES SOUS LA MAISON
+            Collider2D[] nodeHits = Physics2D.OverlapBoxAll(worldPos, size, 0f, LayerMask.GetMask("Nodes"));
+            Debug.Log("Nodes trouvés sous la maison: " + nodeHits.Length);
+
+            if (housePlacer != null)
+            {
+                housePlacer.HandleHouseBlocking(placed);
+            }
         }
         else
         {
@@ -172,10 +244,27 @@ public class TilePlacerUi : MonoBehaviour
     {
         Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         Collider2D hit = Physics2D.OverlapPoint(mousePos, LayerMask.GetMask("Buildings"));
+
         if (hit)
         {
-            Debug.Log("On détruit: " + hit.gameObject.name);
-            Destroy(hit.transform.root.gameObject);
+            GameObject building = hit.transform.root.gameObject;
+            Destroy(building);
+
+            if (housePlacer != null)
+                housePlacer.HandleHouseBlocking(null);
+        }
+        else
+        {
+            Vector3Int cellPos = targetTilemap.WorldToCell(mousePos);
+            TileBase tile = targetTilemap.GetTile(cellPos);
+
+            if (placeableTiles.Contains(tile))
+            {
+                // Remplace par une tile de fond plutôt que null (par exemple la première tile non placeable)
+                TileBase groundTile = wallTiles.Count > 0 ? wallTiles[0] : null;
+
+                targetTilemap.SetTile(cellPos, groundTile);
+            }
         }
 
     }
@@ -191,46 +280,71 @@ public class TilePlacerUi : MonoBehaviour
 
             draggedObject = hit.transform.root.gameObject;
             originalPosition = draggedObject.transform.position;
+
             PlaceableObject id = draggedObject.GetComponent<PlaceableObject>();
             if (id != null && id.objectIndex >= 0 && id.objectIndex < previewObjects.Length)
-            {
                 currentPreview = Instantiate(previewObjects[id.objectIndex]);
-            }
-            currentPreview.transform.position = SnapToGrid(originalPosition);
 
+            currentPreview.transform.position = SnapToGrid(originalPosition);
             draggedObject.SetActive(false);
             isDragging = true;
+        }
+        else
+        {
+            Vector3Int cell = targetTilemap.WorldToCell(mousePos);
+            TileBase tile = targetTilemap.GetTile(cell);
+
+            if (placeableTiles.Contains(tile))
+            {
+                draggedTileCell = cell;
+                draggedTile = tile;
+
+                targetTilemap.SetTile(cell, null); // on "prend" la tile
+
+                // Crée un aperçu de la tile (optionnel)
+                if (currentPreview) Destroy(currentPreview);
+                currentPreview = new GameObject("TilePreview");
+                SpriteRenderer sr = currentPreview.AddComponent<SpriteRenderer>();
+                sr.sprite = ((Tile)tile).sprite;
+                sr.color = new Color(0f, 0.5f, 1f, 0.5f);
+            }
         }
     }
 
     void EndMove(Vector3 worldPos)
     {
-        float cellSize = targetTilemap.cellSize.x;
-        Vector3Int baseCell = targetTilemap.WorldToCell(worldPos);
-        baseCell.x -= 1;
-        baseCell.y -= 1;
+        if (draggedTile != null && draggedTileCell.HasValue)
+        {
+            Vector3Int newCell = targetTilemap.WorldToCell(worldPos);
+            TileBase current = targetTilemap.GetTile(newCell);
 
-        Vector2 size = new Vector2(2f * cellSize, 2f * cellSize);
+            if (current == null || placeableTiles.Contains(current))
+            {
+                targetTilemap.SetTile(newCell, draggedTile);
+            }
+            else
+            {
+                targetTilemap.SetTile(draggedTileCell.Value, draggedTile);
+            }
 
-        bool canPlace = CanPlaceAt(baseCell);
-        bool isClear = IsAreaClear(worldPos, size);
+            draggedTile = null;
+            draggedTileCell = null;
+        }
 
-        Debug.Log($"CanPlaceAt = {canPlace}, IsAreaClear = {isClear}");
-
-        if (CanPlaceAt(baseCell) && IsAreaClear(worldPos, size))
+        if (draggedObject != null)
         {
             draggedObject.transform.position = worldPos;
             draggedObject.SetActive(true);
-        }
-        else
-        {
-            draggedObject.transform.position = originalPosition;
-            draggedObject.SetActive(true);
-            Debug.Log("Déplacement invalide, retour à l'origine");
+            draggedObject = null;
         }
 
-        Destroy(currentPreview);
+        if (currentPreview)
+            Destroy(currentPreview);
+
         isDragging = false;
+
+        if (housePlacer != null)
+            housePlacer.HandleHouseBlocking(draggedObject);
     }
 
     bool CanPlaceAt(Vector3Int cellPos)
@@ -251,11 +365,30 @@ public class TilePlacerUi : MonoBehaviour
             currentPreview.GetComponent<Collider2D>().enabled = false;
 
         Collider2D[] hits = Physics2D.OverlapBoxAll(center, size, 0f, LayerMask.GetMask("Buildings"));
+
+        //  Réduction légère des bounds pour éviter les bords qui se touchent
+        Vector3 shrinkedSize = size * 0.98f; // 2% plus petit
+        Bounds newBounds = new Bounds(center, shrinkedSize);
+
         foreach (var hit in hits)
         {
-            if (hit.transform.root.gameObject != currentPreview)
-                return false;
+            if (hit == null) continue;
+
+            Bounds otherBounds = hit.bounds;
+
+            if (!newBounds.Intersects(otherBounds)) continue;
+
+            Debug.Log($"Hit: {hit.name}, Tag: {hit.tag}");
+
+            // Autorise les contacts entre routes
+            if (currentObjectSize == ObjectSize.OneByOne && hit.CompareTag("Route"))
+                continue;
+            if (currentObjectSize == ObjectSize.TwoByTwo && hit.CompareTag("Route"))
+                continue;
+
+            return false;
         }
+
         return true;
     }
 }

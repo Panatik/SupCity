@@ -303,6 +303,52 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!1 &95136189
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 95136191}
+  - component: {fileID: 95136190}
+  m_Layer: 0
+  m_Name: HousePlacer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &95136190
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 95136189}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90f459ebf091b5149afe9df8f7162d2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  housePrefab: {fileID: 6703591653845088059, guid: 45022ed9a6be7d941a0ea0790e2908e6, type: 3}
+  houseParent: {fileID: 1079011571}
+--- !u!4 &95136191
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 95136189}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -4.094414, y: -2.538125, z: -4.273894}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &432299945
 GameObject:
   m_ObjectHideFlags: 0
@@ -353,8 +399,14 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 5ce580f2a81d9004faedb3e7e5994eff, type: 2}
   placeableObjects:
   - {fileID: 6703591653845088059, guid: 45022ed9a6be7d941a0ea0790e2908e6, type: 3}
+  - {fileID: 265234505794039688, guid: 65e6a34ef066c6a469e33d9d1db34634, type: 3}
+  - {fileID: 265234505794039688, guid: 90a428aafe70d88439ea1b3b306242b1, type: 3}
+  - {fileID: 265234505794039688, guid: 372bf85029d1dfe46b7ec814c91a232c, type: 3}
   previewObjects:
   - {fileID: 8286566015720219977, guid: b152179551694ec4b97ccfe7b123fdda, type: 3}
+  - {fileID: 265234505794039688, guid: 65e6a34ef066c6a469e33d9d1db34634, type: 3}
+  - {fileID: 265234505794039688, guid: 90a428aafe70d88439ea1b3b306242b1, type: 3}
+  - {fileID: 265234505794039688, guid: 372bf85029d1dfe46b7ec814c91a232c, type: 3}
 --- !u!4 &432299947
 Transform:
   m_ObjectHideFlags: 0
@@ -538,7 +590,7 @@ GameObject:
   - component: {fileID: 556510785}
   - component: {fileID: 556510784}
   m_Layer: 5
-  m_Name: DirtButton (3)
+  m_Name: DeleteButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -776,7 +828,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -47.49735, y: -324.0003}
+  m_AnchoredPosition: {x: -47.49735, y: -324.00024}
   m_SizeDelta: {x: 46.11, y: -1140.67}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &692501977
@@ -977,15 +1029,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   floorMap: {fileID: 984446421}
-  walltiles:
-  - {fileID: 11400000, guid: 341187fc8f1219b47aa14a1633c528fa, type: 2}
-  - {fileID: 11400000, guid: 18c1e02ccb5901c46b417024abd8b8c2, type: 2}
-  - {fileID: 11400000, guid: 698b12b3c92d1b544b8b04901f3437fe, type: 2}
-  - {fileID: 11400000, guid: 53e27d80ba709f649b71ea1738b934df, type: 2}
-  - {fileID: 11400000, guid: 0ed48deb907cb1c45b0a98f7f55f51dd, type: 2}
-  - {fileID: 11400000, guid: 72f2ce46c0ba63c45937a5171675906e, type: 2}
-  - {fileID: 11400000, guid: 8c1347850e76ba94ebe9d4ebc91dadd4, type: 2}
-  - {fileID: 11400000, guid: 5ce580f2a81d9004faedb3e7e5994eff, type: 2}
+  wallTilemap: {fileID: 1425395695}
   mapWidth: 15
   mapHeight: 15
   nodePrefab: {fileID: 1156480304519338005, guid: d4a1e28f28c8c7c469b3a9100959eaf0, type: 3}
@@ -71700,6 +71744,37 @@ TilemapCollider2D:
   m_MaximumTileChangeCount: 1000
   m_ExtrusionFactor: 0
   m_UseDelaunayMesh: 0
+--- !u!1 &1079011570
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1079011571}
+  m_Layer: 0
+  m_Name: HouseParent
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1079011571
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1079011570}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.838495, y: -3.5790446, z: -4.298467}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1119881703
 GameObject:
   m_ObjectHideFlags: 0
@@ -71713,7 +71788,7 @@ GameObject:
   - component: {fileID: 1119881706}
   - component: {fileID: 1119881705}
   m_Layer: 5
-  m_Name: DirtButton (1)
+  m_Name: DirtButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -71784,12 +71859,12 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 432299946}
         m_TargetAssemblyTypeName: TilePlacerUi, Assembly-CSharp
-        m_MethodName: SelectTile
+        m_MethodName: SelectObject
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 2
+          m_IntArgument: 1
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -71916,12 +71991,12 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 432299946}
         m_TargetAssemblyTypeName: TilePlacerUi, Assembly-CSharp
-        m_MethodName: SelectTile
+        m_MethodName: SelectObject
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 2
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -132085,7 +132160,7 @@ GameObject:
   - component: {fileID: 1475301025}
   - component: {fileID: 1475301024}
   m_Layer: 5
-  m_Name: DirtButton (2)
+  m_Name: PlaceButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -132288,12 +132363,12 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 432299946}
         m_TargetAssemblyTypeName: TilePlacerUi, Assembly-CSharp
-        m_MethodName: SelectTile
+        m_MethodName: SelectObject
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 1
+          m_IntArgument: 3
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -132424,7 +132499,7 @@ GameObject:
   - component: {fileID: 2036540590}
   - component: {fileID: 2036540589}
   m_Layer: 5
-  m_Name: DirtButton (4)
+  m_Name: MoveButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -132555,3 +132630,5 @@ SceneRoots:
   - {fileID: 40676079}
   - {fileID: 432299947}
   - {fileID: 852446334}
+  - {fileID: 95136191}
+  - {fileID: 1079011571}

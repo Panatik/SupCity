@@ -11,12 +11,16 @@ public class AStarManager : MonoBehaviour
     {
         instance = this;
     }
+    void Start()
+    {
+        RebuildAllConnections(); // <<< INDISPENSABLE
+    }
 
     public List<Node> GeneratePath(Node start, Node end)
     {
         List<Node> openSet = new List<Node>();
 
-        foreach (Node n in FindObjectsOfType<Node>())
+        foreach (Node n in FindObjectsByType<Node>(FindObjectsSortMode.None))
         {
             n.gScore = float.MaxValue;
         }
@@ -59,7 +63,7 @@ public class AStarManager : MonoBehaviour
 
             foreach (Node connectedNode in currentNode.connections)
             {
-                if (connectedNode.isBlocked)
+                if (connectedNode == null || connectedNode.IsBlocked)
                     continue;
 
                 float heldGScore = currentNode.gScore + Vector2.Distance(currentNode.transform.position, connectedNode.transform.position);
@@ -79,5 +83,31 @@ public class AStarManager : MonoBehaviour
         }
 
         return null;
+    }
+
+    public void RebuildAllConnections()
+    {
+        Node[] allNodes = FindObjectsByType<Node>(FindObjectsSortMode.None);
+
+        foreach (Node node in allNodes)
+        {
+            node.connections.Clear();
+
+            foreach (Node other in allNodes)
+            {
+                if (node == other || other.IsBlocked)
+                    continue;
+
+                Vector2 dir = other.transform.position - node.transform.position;
+
+                // Connexions orthogonales uniquement (1 unité de distance verticale ou horizontale, pas les deux)
+                if ((Mathf.Abs(dir.x) == 1 && dir.y == 0) || (Mathf.Abs(dir.y) == 1 && dir.x == 0))
+                {
+                    node.connections.Add(other);
+                }
+            }
+        }
+
+        Debug.Log("Orthogonal connections rebuilt.");
     }
 }

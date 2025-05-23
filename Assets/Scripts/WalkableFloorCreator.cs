@@ -17,7 +17,8 @@ public class WalkableFloorCreator : MonoBehaviour
     public Tilemap floorMap;
     //public Tilemap wallMap;
 
-    public List<TileBase> walltiles;
+    //public List<TileBase> walltiles;
+    public Tilemap wallTilemap;
 
     public int mapWidth;
     public int mapHeight;
@@ -48,12 +49,14 @@ public class WalkableFloorCreator : MonoBehaviour
             for (int y = bounds.yMin; y < bounds.yMax; y++)
             {
                 Vector3Int cellPosition = new Vector3Int(x, y, 0);
-                TileBase tile = floorMap.GetTile(cellPosition);
-                if (tile != null && walltiles.Contains(tile))
+                TileBase wallTile = wallTilemap.GetTile(cellPosition);
+                TileBase floorTile = floorMap.GetTile(cellPosition);
+
+                if (wallTile != null)
                 {
                     grid[x - bounds.xMin, y - bounds.yMin] = Grid.Wall;
                 }
-                else if (tile != null)
+                else if (floorTile != null)
                 {
                     grid[x - bounds.xMin, y - bounds.yMin] = Grid.Floor;
                 }
@@ -88,7 +91,16 @@ public class WalkableFloorCreator : MonoBehaviour
             }
         }
 
-        CreateConnections();
+        //CreateConnections();
+
+        HousePlacer housePlacer = FindFirstObjectByType<HousePlacer>();
+        if (housePlacer != null)
+        {
+            housePlacer.RebuildAllConnections();
+        }
+
+        canDrawGizmos = true;
+        SpawnAI();
     }
 
     void CreateConnections()
@@ -116,21 +128,6 @@ public class WalkableFloorCreator : MonoBehaviour
         SpawnAI();
     }
 
-    bool IsWallBetween(Vector2 start, Vector2 end)
-    {
-        Vector2 direction = (end - start).normalized;
-        float distance = Vector2.Distance(start, end);
-
-        RaycastHit2D hit = Physics2D.Raycast(start, direction, distance);
-
-        if (hit.collider != null && hit.collider.gameObject.CompareTag("Wall"))
-        {
-            return true; // Un mur bloque le chemin
-        }
-
-        return false;
-    }
-
     void ConnectNodes(Node from, Node to)
     {
         if (from == to) { return; }
@@ -147,7 +144,7 @@ public class WalkableFloorCreator : MonoBehaviour
             return;
         }
 
-        Node spawnNode = validSpawnNodes[Random.Range(0, validSpawnNodes.Count)];
+        Node spawnNode = validSpawnNodes[154];
 
         NPC_Controller newNPC = Instantiate(npc, spawnNode.transform.position, Quaternion.identity);
         newNPC.currentNode = spawnNode;

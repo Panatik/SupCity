@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 8653337858011393341}
   - component: {fileID: 3501858273032751996}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: ValidHouse
-  m_TagString: Untagged
+  m_TagString: Buildings
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
