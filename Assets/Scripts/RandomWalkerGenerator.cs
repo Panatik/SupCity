@@ -35,7 +35,7 @@ public class RandomWalkerGenerator : MonoBehaviour
     public NPC_Controller npc;
 
     private bool canDrawGizmos;
-
+    [SerializeField] private int initialNPCCount = 5;
     private void Awake()
     {
         InitializeGrid();
@@ -231,6 +231,12 @@ public class RandomWalkerGenerator : MonoBehaviour
         }
         canDrawGizmos = true;
         SpawnAI();
+
+        for (int i = 0; i < 3; i++)
+        {
+            SpawnOneAI();
+        }
+        InvokeRepeating(nameof(SpawnOneAI), 10f, 15f);
     }
 
     void ConnectNodes(Node from, Node to)
@@ -242,10 +248,27 @@ public class RandomWalkerGenerator : MonoBehaviour
 
     void SpawnAI()
     {
+        for (int i = 0; i < initialNPCCount; i++) 
+        { 
+            Node randNode = nodeList[Random.Range(0, nodeList.Count)];
+
+            NPC_Controller newNPC = Instantiate(npc, randNode.transform.position, Quaternion.identity);
+
+            newNPC.currentNode = randNode;
+        }
+    }
+
+    public void SpawnOneAI()
+    {
+        if (nodeList == null || nodeList.Count == 0)
+        {
+            Debug.LogWarning("Node list is empty, can't spawn AI.");
+            return;
+        }
+
         Node randNode = nodeList[Random.Range(0, nodeList.Count)];
 
         NPC_Controller newNPC = Instantiate(npc, randNode.transform.position, Quaternion.identity);
-
         newNPC.currentNode = randNode;
     }
 

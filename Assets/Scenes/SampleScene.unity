@@ -1002,7 +1002,9 @@ MonoBehaviour:
   mapHeight: 15
   nodePrefab: {fileID: 1156480304519338005, guid: d4a1e28f28c8c7c469b3a9100959eaf0, type: 3}
   nodeList: []
-  npc: {fileID: 1835333876958400324, guid: 8387ac20f0bd8d44caaf25ea14e02d79, type: 3}
+  npcPrefabs:
+  - {fileID: 1835333876958400324, guid: 8387ac20f0bd8d44caaf25ea14e02d79, type: 3}
+  - {fileID: 1835333876958400324, guid: 53d28bb09ab02da4f87ba9a70b816ad1, type: 3}
 --- !u!1 &946983416
 GameObject:
   m_ObjectHideFlags: 0
@@ -1109,7 +1111,7 @@ Transform:
   m_GameObject: {fileID: 984446418}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -0.06, y: -0.54, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

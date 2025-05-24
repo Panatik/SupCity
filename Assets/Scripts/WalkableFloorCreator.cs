@@ -25,7 +25,7 @@ public class WalkableFloorCreator : MonoBehaviour
     public Node nodePrefab;
     public List<Node> nodeList;
 
-    public NPC_Controller npc;
+    public List<NPC_Controller> npcPrefabs;
 
     private bool canDrawGizmos;
 
@@ -75,13 +75,13 @@ public class WalkableFloorCreator : MonoBehaviour
             {
                 if (grid[x, y] == Grid.Floor)
                 {
-                    // Convertir les coordonnées internes (grid) en coordonnées tilemap
+                    // Convertir les coordonnï¿½es internes (grid) en coordonnï¿½es tilemap
                     Vector3Int cellPos = new Vector3Int(x + tilemapOrigin.x, y + tilemapOrigin.y, 0);
 
                     // Obtenir la position exacte dans le monde
                     Vector3 worldPos = floorMap.GetCellCenterWorld(cellPos);
 
-                    // Créer un node à cette position
+                    // Crï¿½er un node ï¿½ cette position
                     Node node = Instantiate(nodePrefab, worldPos, Quaternion.identity);
                     nodeList.Add(node);
                 }
@@ -93,7 +93,7 @@ public class WalkableFloorCreator : MonoBehaviour
 
     void CreateConnections()
     {
-        float maxDistance = 1.1f; // tolérance pour les diagonales si tu veux (ou mets 1.01f pour 4 directions)
+        float maxDistance = 1.1f; // tolï¿½rance pour les diagonales si tu veux (ou mets 1.01f pour 4 directions)
 
         for (int i = 0; i < nodeList.Count; i++)
         {
@@ -109,12 +109,25 @@ public class WalkableFloorCreator : MonoBehaviour
             }
         }
 
-        // Supprimer les Nodes isolés
+        // Supprimer les Nodes isolï¿½s
         nodeList.RemoveAll(node => node.connections.Count == 0);
 
+        for(int i=0; i<20; i++)
+            SpawnAI();
+
         canDrawGizmos = true;
-        SpawnAI();
+        StartCoroutine(SpawnAIWithDelay());
     }
+
+    IEnumerator SpawnAIWithDelay()
+    {
+        for (int i = 0; i < 5; i++)
+        {
+            SpawnAI();
+            yield return new WaitForSeconds(5 * 60f);
+        }
+    }
+
 
     bool IsWallBetween(Vector2 start, Vector2 end)
     {
@@ -143,16 +156,21 @@ public class WalkableFloorCreator : MonoBehaviour
 
         if (validSpawnNodes.Count == 0)
         {
-            Debug.LogWarning("Aucun Node connecté disponible pour le spawn !");
+            Debug.LogWarning("Aucun Node connectÃ© disponible pour le spawn !");
             return;
         }
 
         Node spawnNode = validSpawnNodes[Random.Range(0, validSpawnNodes.Count)];
 
-        NPC_Controller newNPC = Instantiate(npc, spawnNode.transform.position, Quaternion.identity);
+        // Choisir un prefab alÃ©atoire
+        int index = Random.Range(0, npcPrefabs.Count);
+        NPC_Controller chosenNPC = npcPrefabs[index];
+
+        // Instancier ce prefab
+        NPC_Controller newNPC = Instantiate(chosenNPC, spawnNode.transform.position, Quaternion.identity);
         newNPC.currentNode = spawnNode;
 
-        Debug.Log("NPC spawn à : " + spawnNode.transform.position);
+        Debug.Log("NPC spawnÃ© Ã  : " + spawnNode.transform.position + " avec prefab : " + chosenNPC.name);
     }
 
     private void OnDrawGizmos()
