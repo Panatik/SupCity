@@ -2879,6 +2879,7 @@ MonoBehaviour:
   nodePrefab: {fileID: 1156480304519338005, guid: d4a1e28f28c8c7c469b3a9100959eaf0, type: 3}
   nodeList: []
   npcPrefabs:
+<<<<<<< HEAD
   - {fileID: 1835333876958400324, guid: de531a28e0c71eb42beee0cdfa075297, type: 3}
   - {fileID: 1835333876958400324, guid: 53d28bb09ab02da4f87ba9a70b816ad1, type: 3}
 --- !u!1 &862498191
@@ -3088,6 +3089,10 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 912089651}
   m_CullTransparentMesh: 1
+=======
+  - {fileID: 1835333876958400324, guid: 8387ac20f0bd8d44caaf25ea14e02d79, type: 3}
+  - {fileID: 1835333876958400324, guid: 53d28bb09ab02da4f87ba9a70b816ad1, type: 3}
+>>>>>>> 12864cc (updates humans : humans spawn)
 --- !u!1 &946983416
 GameObject:
   m_ObjectHideFlags: 0
@@ -3222,7 +3227,7 @@ Transform:
   m_GameObject: {fileID: 984446418}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -0.06, y: -0.54, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
