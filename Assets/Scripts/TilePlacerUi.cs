@@ -250,6 +250,11 @@ public class TilePlacerUi : MonoBehaviour
             {
                 housePlacer.HandleHouseBlocking(placed);
             }
+            House newHouse = placed.GetComponent<House>();
+            if (newHouse != null && PNJ.Instance != null)
+            {
+                PNJ.Instance.OnHouseBuilt(newHouse);
+            }
         }
         else
         {

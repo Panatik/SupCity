@@ -1304,7 +1304,9 @@ MonoBehaviour:
   mapHeight: 15
   nodePrefab: {fileID: 1156480304519338005, guid: d4a1e28f28c8c7c469b3a9100959eaf0, type: 3}
   nodeList: []
-  npc: {fileID: 1835333876958400324, guid: 8387ac20f0bd8d44caaf25ea14e02d79, type: 3}
+  npcPrefabs:
+  - {fileID: 1835333876958400324, guid: de531a28e0c71eb42beee0cdfa075297, type: 3}
+  - {fileID: 1835333876958400324, guid: 53d28bb09ab02da4f87ba9a70b816ad1, type: 3}
 --- !u!1001 &852446334
 PrefabInstance:
   m_ObjectHideFlags: 0
