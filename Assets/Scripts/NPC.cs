@@ -5,6 +5,7 @@ using UnityEngine;
 public class PNJ : MonoBehaviour
 {
     public float moveSpeed = 2f;
+    public float idleCheckCooldown = 30f;
 
     public House assignedHouse;
     private List<Node> currentPath = new List<Node>();
@@ -12,65 +13,78 @@ public class PNJ : MonoBehaviour
     private Node currentNode;
 
     private bool isIdle = false;
-
-    public static PNJ Instance;
+    private float idleCheckTimer = 0f;
 
     void Start()
     {
         currentNode = GetClosestNode(transform.position);
     }
 
-    private void Awake()
-    {
-        Instance = this;
-    }
-
     void Update()
     {
-        if (isIdle || currentPath == null || currentPath.Count == 0 || currentPathIndex >= currentPath.Count)
-            return;
+        idleCheckTimer += Time.deltaTime;
 
-        Vector3 targetPos = currentPath[currentPathIndex].transform.position;
-        float step = moveSpeed * Time.deltaTime;
-
-        transform.position = Vector3.MoveTowards(transform.position, targetPos, step);
-
-        if (Vector3.Distance(transform.position, targetPos) < 0.05f)
+        // Répète toutes les 30s
+        if (idleCheckTimer >= idleCheckCooldown)
         {
-            currentPathIndex++;
-            if (currentPathIndex >= currentPath.Count)
+            idleCheckTimer = 0f;
+            TryAssignOrGoIdle();
+        }
+
+        // Si pas en idle, on suit le chemin
+        if (!isIdle && currentPath != null && currentPath.Count > 0 && currentPathIndex < currentPath.Count)
+        {
+            Vector3 targetPos = currentPath[currentPathIndex].transform.position;
+            float step = moveSpeed * Time.deltaTime;
+
+            transform.position = Vector3.MoveTowards(transform.position, targetPos, step);
+
+            if (Vector3.Distance(transform.position, targetPos) < 0.05f)
             {
-                // Arrivé
-                IdleAction();
+                currentPathIndex++;
+                if (currentPathIndex >= currentPath.Count)
+                {
+                    IdleAction();
+                }
             }
         }
     }
 
-    void AssignNearestHouse()
+    void TryAssignOrGoIdle()
     {
-        House[] houses = FindObjectsByType<House>(FindObjectsSortMode.None);
-        House closest = null;
-        float minDist = Mathf.Infinity;
-
-        foreach (var house in houses)
+        // Si pas encore de maison : on en cherche une libre
+        if (assignedHouse == null)
         {
-            if (!house.HasSpace()) continue;
+            House[] houses = FindObjectsByType<House>(FindObjectsSortMode.None);
+            House closest = null;
+            float minDist = Mathf.Infinity;
 
-            float dist = Vector2.Distance(transform.position, house.transform.position);
-            if (dist < minDist)
+            foreach (var house in houses)
             {
-                closest = house;
-                minDist = dist;
+                if (!house.HasSpace()) continue;
+
+                float dist = Vector2.Distance(transform.position, house.transform.position);
+                if (dist < minDist)
+                {
+                    closest = house;
+                    minDist = dist;
+                }
+            }
+
+            if (closest != null)
+            {
+                assignedHouse = closest;
+                assignedHouse.AddOccupant(this);
             }
         }
 
-        if (closest != null)
+        // Si on a une maison, on retourne y faire une action
+        if (assignedHouse != null)
         {
-            assignedHouse = closest;
-            assignedHouse.AddOccupant(this);
-            Node targetNode = GetClosestNode(assignedHouse.GetEntrancePosition());
-            currentPath = AStarManager.instance.GeneratePath(currentNode, targetNode);
+            Node bestTargetNode = GetClosestNodeAmong(assignedHouse.GetOccupiedNodes());
+            currentPath = AStarManager.instance.GeneratePath(GetClosestNode(transform.position), bestTargetNode);
             currentPathIndex = 0;
+            isIdle = false;
         }
     }
 
@@ -90,6 +104,29 @@ public class PNJ : MonoBehaviour
             }
         }
 
+        if (closest == null)
+        {
+            Debug.LogWarning($"[PNJ] Aucun Node trouvé près de la position {position}");
+        }
+
+        return closest;
+    }
+
+    Node GetClosestNodeAmong(List<Node> nodes)
+    {
+        Node closest = null;
+        float minDist = Mathf.Infinity;
+
+        foreach (var node in nodes)
+        {
+            float dist = Vector2.Distance(transform.position, node.transform.position);
+            if (dist < minDist && !node.IsBlocked)
+            {
+                closest = node;
+                minDist = dist;
+            }
+        }
+
         return closest;
     }
 
@@ -97,20 +134,6 @@ public class PNJ : MonoBehaviour
     {
         isIdle = true;
         Debug.Log($"{name} est arrivé à sa maison ({assignedHouse.name}) et est en idle.");
-        // Animation, changement de sprite ou autre logique ici
-    }
-
-    public void OnHouseBuilt(House newHouse)
-    {
-        // Recherche tous les citoyens sans maison
-        PNJ[] allCitizens = FindObjectsByType<PNJ>(FindObjectsSortMode.None);
-
-        foreach (var citizen in allCitizens)
-        {
-            if (citizen.assignedHouse == null)
-            {
-                citizen.AssignNearestHouse();
-            }
-        }
+        // Ici tu pourrais lancer une animation, etc.
     }
 }

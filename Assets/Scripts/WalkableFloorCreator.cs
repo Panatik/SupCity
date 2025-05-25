@@ -100,8 +100,13 @@ public class WalkableFloorCreator : MonoBehaviour
             housePlacer.RebuildAllConnections();
         }
 
+        for (int i = 0; i < 20; i++) 
+        {
+            SpawnAI();
+        }
+
         canDrawGizmos = true;
-        SpawnAI();
+        StartCoroutine(SpawnAIWithDelay());
     }
 
     void CreateConnections()
@@ -135,6 +140,15 @@ public class WalkableFloorCreator : MonoBehaviour
         from.connections.Add(to);
     }
 
+    IEnumerator SpawnAIWithDelay() 
+    {
+        for (int i = 0; i < 5; i++) 
+        {
+            SpawnAI();
+            yield return new WaitForSeconds(5 * 60f);
+        }
+    }
+
     void SpawnAI()
     {
         List<Node> validSpawnNodes = nodeList.FindAll(n => n.connections.Count > 0);
@@ -145,7 +159,8 @@ public class WalkableFloorCreator : MonoBehaviour
             return;
         }
 
-        Node spawnNode = validSpawnNodes[154];
+        //Node spawnNode = validSpawnNodes[154];
+        Node spawnNode = validSpawnNodes[Random.Range(0, validSpawnNodes.Count)];
 
         // Choisir un prefab aléatoire
         int index = Random.Range(0, npcPrefabs.Count);

@@ -1,5 +1,5 @@
 using System.Collections.Generic;
-using UnityEditor.Search;
+//using UnityEditor.Search;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 using UnityEngine.EventSystems;
@@ -238,11 +238,6 @@ public class TilePlacerUi : MonoBehaviour
             PlaceableObject id = placed.AddComponent<PlaceableObject>();
             id.objectIndex = selectedIndex;
 
-            /*if (currentPreview)
-                Destroy(currentPreview);
-            currentPreview = Instantiate(previewObjects[selectedIndex]);
-            MakePreview(currentPreview);*/
-
             // Marque la cellule comme dernière utilisée
             lastPlacedObjectCell = cell;
 
@@ -251,9 +246,19 @@ public class TilePlacerUi : MonoBehaviour
                 housePlacer.HandleHouseBlocking(placed);
             }
             House newHouse = placed.GetComponent<House>();
-            if (newHouse != null && PNJ.Instance != null)
+            if (newHouse != null)
             {
-                PNJ.Instance.OnHouseBuilt(newHouse);
+                newHouse.RegisterOccupiedNodes(); // <<< AJOUT ESSENTIEL
+
+                PNJ[] allPNJs = FindObjectsByType<PNJ>(FindObjectsSortMode.None);
+                foreach (PNJ pnj in allPNJs)
+                {
+                    if (pnj.assignedHouse == null)
+                    {
+                        // Déclenche une tentative d’affectation
+                        pnj.Invoke("TryAssignOrGoIdle", 0f);
+                    }
+                }
             }
         }
         else

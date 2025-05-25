@@ -4,20 +4,58 @@ using UnityEngine;
 public class House : MonoBehaviour
 {
     [Header("Configuration")]
-    public int maxOccupants = 2; // Nombre de PNJ maximum selon le niveau de la maison
-
-    [Header("Entrée de la maison")]
-    public Transform entrancePoint; // Point vers lequel les PNJ se déplacent (placer un empty object devant la porte)
+    public int maxOccupants = 2;
 
     private List<PNJ> occupants = new List<PNJ>();
+    private List<Node> occupiedNodes = new List<Node>();
 
-    // Vérifie s'il reste de la place pour un nouveau PNJ
+    private void Start()
+    {
+        UpdateOccupiedNodes(); // détecte automatiquement les nodes que la maison occupe
+    }
+
+    private void UpdateOccupiedNodes()
+    {
+        occupiedNodes.Clear();
+        Node[] allNodes = FindObjectsByType<Node>(FindObjectsSortMode.None);
+
+        foreach (Node node in allNodes)
+        {
+            // Teste si la position du node est "sous" la maison
+            Collider2D houseCollider = GetComponentInChildren<Collider2D>();
+            if (houseCollider == null) return;
+
+            Bounds houseBounds = houseCollider.bounds;
+            if (houseBounds.Contains(node.transform.position))
+            {
+                occupiedNodes.Add(node);
+            }
+        }
+    }
+
+    public void RegisterOccupiedNodes()
+    {
+        occupiedNodes.Clear();
+
+        Node[] allNodes = FindObjectsByType<Node>(FindObjectsSortMode.None);
+        Bounds houseBounds = GetComponent<Collider2D>().bounds;
+
+        foreach (Node node in allNodes)
+        {
+            if (houseBounds.Contains(node.transform.position))
+            {
+                occupiedNodes.Add(node);
+            }
+        }
+
+        Debug.Log($"[House] {occupiedNodes.Count} nodes occupés enregistrés pour la maison {name}.");
+    }
+
     public bool HasSpace()
     {
         return occupants.Count < maxOccupants;
     }
 
-    // Ajoute un occupant (appelé quand un PNJ entre dans la maison)
     public void AddOccupant(PNJ pnj)
     {
         if (!occupants.Contains(pnj) && HasSpace())
@@ -26,17 +64,6 @@ public class House : MonoBehaviour
         }
     }
 
-    // Retourne la position vers laquelle le PNJ doit aller
-    public Vector3 GetEntrancePosition()
-    {
-        if (entrancePoint != null)
-            return entrancePoint.position;
-
-        // Par défaut, retourne la position de la maison elle-même
-        return transform.position;
-    }
-
-    // (Optionnel) Supprimer un PNJ si jamais il part
     public void RemoveOccupant(PNJ pnj)
     {
         if (occupants.Contains(pnj))
@@ -45,9 +72,13 @@ public class House : MonoBehaviour
         }
     }
 
-    // (Optionnel) Retourne la liste des occupants
     public List<PNJ> GetOccupants()
     {
         return occupants;
+    }
+
+    public List<Node> GetOccupiedNodes()
+    {
+        return occupiedNodes;
     }
 }
