@@ -26,7 +26,8 @@ public class WalkableFloorCreator : MonoBehaviour
     public Node nodePrefab;
     public List<Node> nodeList;
 
-    public NPC_Controller npc;
+    //public NPC_Controller npc;
+    public List<NPC_Controller> npcPrefabs;
 
     private bool canDrawGizmos;
 
@@ -99,8 +100,13 @@ public class WalkableFloorCreator : MonoBehaviour
             housePlacer.RebuildAllConnections();
         }
 
+        for (int i = 0; i < 20; i++) 
+        {
+            SpawnAI();
+        }
+
         canDrawGizmos = true;
-        SpawnAI();
+        StartCoroutine(SpawnAIWithDelay());
     }
 
     void CreateConnections()
@@ -134,6 +140,15 @@ public class WalkableFloorCreator : MonoBehaviour
         from.connections.Add(to);
     }
 
+    IEnumerator SpawnAIWithDelay() 
+    {
+        for (int i = 0; i < 5; i++) 
+        {
+            SpawnAI();
+            yield return new WaitForSeconds(5 * 60f);
+        }
+    }
+
     void SpawnAI()
     {
         List<Node> validSpawnNodes = nodeList.FindAll(n => n.connections.Count > 0);
@@ -144,9 +159,14 @@ public class WalkableFloorCreator : MonoBehaviour
             return;
         }
 
-        Node spawnNode = validSpawnNodes[154];
+        //Node spawnNode = validSpawnNodes[154];
+        Node spawnNode = validSpawnNodes[Random.Range(0, validSpawnNodes.Count)];
 
-        NPC_Controller newNPC = Instantiate(npc, spawnNode.transform.position, Quaternion.identity);
+        // Choisir un prefab aléatoire
+        int index = Random.Range(0, npcPrefabs.Count);
+        NPC_Controller chosenNPC = npcPrefabs[index];
+
+        NPC_Controller newNPC = Instantiate(chosenNPC, spawnNode.transform.position, Quaternion.identity);
         newNPC.currentNode = spawnNode;
 
         Debug.Log("NPC spawn à : " + spawnNode.transform.position);

@@ -1,5 +1,5 @@
 using System.Collections.Generic;
-using UnityEditor.Search;
+//using UnityEditor.Search;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 using UnityEngine.EventSystems;
@@ -32,6 +32,8 @@ public class TilePlacerUi : MonoBehaviour
 
     private HousePlacer housePlacer;
 
+    private Vector3Int? lastPlacedObjectCell = null;
+
     public enum ObjectSize
     {
         OneByOne,
@@ -46,6 +48,8 @@ public class TilePlacerUi : MonoBehaviour
 
     public void SetToolMode(int mode)
     {
+        selectedObject = null;
+        if (currentPreview) Destroy(currentPreview);
         currentMode = (ToolMode)mode;
 
         // Supprime la preview quand on passe en Delete ou Move
@@ -104,59 +108,50 @@ public class TilePlacerUi : MonoBehaviour
         Vector3 mouseWorldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         mouseWorldPos.z = 0f;
         Vector3 intersectionPos = SnapToGrid(mouseWorldPos);
-        float cellSize = targetTilemap.cellSize.x;
 
         if (EventSystem.current.IsPointerOverGameObject())
             return;
 
         if (Input.GetMouseButton(0))
         {
-            switch (currentMode)
+            if (!isDragging)
             {
-                case ToolMode.Place:
-                    if (selectedTile != null) PlaceTile(mouseWorldPos);
-                    else if (selectedObject != null) PlaceObject(intersectionPos);
-                    break;
+                switch (currentMode)
+                {
+                    case ToolMode.Place:
+                        if (selectedTile != null) PlaceTile(mouseWorldPos);
+                        else if (selectedObject != null) PlaceObject(intersectionPos);
+                        break;
 
-                case ToolMode.Delete:
-                    if (currentPreview)
-                        Destroy(currentPreview);
-                    HandleDelete();
-                    break;
+                    case ToolMode.Delete:
+                        if (currentPreview)
+                            Destroy(currentPreview);
+                        HandleDelete();
+                        break;
 
-                case ToolMode.Move:
-                    StartMove(intersectionPos);
-                    break;
+                    case ToolMode.Move:
+                        StartMove(intersectionPos);
+                        break;
+                }
             }
         }
 
         if (Input.GetMouseButtonUp(0))
         {
             lastPlacedCell = null;
-        }
+            lastPlacedObjectCell = null;
 
-        if (isDragging)
-        {
-            currentPreview.transform.position = intersectionPos;
-
-            if (Input.GetMouseButtonUp(0))
+            if (isDragging)
+            {
                 EndMove(intersectionPos);
+            }
         }
 
-        if (!isDragging && currentPreview)
+        // Gérer la position de la preview même pendant un drag
+        if (currentPreview != null)
         {
-            Vector3Int cellPos = targetTilemap.WorldToCell(Input.mousePosition);
-            currentPreview.transform.position = targetTilemap.GetCellCenterWorld(cellPos);
-        }
-        else if (isDragging && draggedTile != null && currentPreview)
-        {
-            Vector3Int cellPos = targetTilemap.WorldToCell(Input.mousePosition);
-            currentPreview.transform.position = targetTilemap.GetCellCenterWorld(cellPos);
-        }
-
-        // La preview suit la souris si pas en déplacement
-        if (!isDragging && currentPreview)
             currentPreview.transform.position = intersectionPos;
+        }
     }
 
     Vector3 SnapToGrid(Vector3 pos)
@@ -200,38 +195,70 @@ public class TilePlacerUi : MonoBehaviour
     void PlaceObject(Vector3 worldPos)
     {
         float cellSize = targetTilemap.cellSize.x;
-        Vector3Int baseCell = targetTilemap.WorldToCell(worldPos);
+
+        // Prend la vraie position "snappée" pour comparaison
+        Vector3 snappedWorldPos = SnapToGrid(worldPos);
+        Vector3Int cell = targetTilemap.WorldToCell(snappedWorldPos);
+
+        // Ne repose pas si même case que la dernière
+        if (lastPlacedObjectCell.HasValue && lastPlacedObjectCell.Value == cell)
+            return;
+
         if (currentObjectSize == ObjectSize.OneByOne)
         {
-            baseCell.x -= 1;
-            baseCell.y -= 1;
+            cell.x -= 1;
+            cell.y -= 1;
+
+            // Vérifie s'il y a déjà un objet route à cet endroit
+            Collider2D hit = Physics2D.OverlapPoint(snappedWorldPos, LayerMask.GetMask("Buildings"));
+            if (hit != null && hit.CompareTag("Route"))
+            {
+                // On a déjà une route ici
+                return;
+            }
         }
 
         Vector2 size = new Vector2(2f * cellSize, 2f * cellSize);
-        if (CanPlaceAt(baseCell) && IsAreaClear(worldPos, size))
+        if (CanPlaceAt(cell) && IsAreaClear(snappedWorldPos, size))
         {
-            //Instantiate(selectedObject, worldPos, Quaternion.identity);
-            GameObject placed = Instantiate(selectedObject, worldPos, Quaternion.identity);
+            GameObject placed = Instantiate(selectedObject, snappedWorldPos, Quaternion.identity);
 
-            // Ajoute un identifiant à l'objet
+            if (selectedObject.CompareTag("Buildings"))
+            {
+                selectedObject = null;
+                Destroy(currentPreview);
+            }
+            else {
+                if (currentPreview)
+                    Destroy(currentPreview);
+                currentPreview = Instantiate(previewObjects[selectedIndex]);
+                MakePreview(currentPreview);
+            }
+
             PlaceableObject id = placed.AddComponent<PlaceableObject>();
             id.objectIndex = selectedIndex;
 
-            // Détruit l'ancienne preview
-            if (currentPreview)
-                Destroy(currentPreview);
-
-            // Recrée la preview à la souris
-            currentPreview = Instantiate(previewObjects[selectedIndex]);
-            MakePreview(currentPreview);
-
-            // BLOQUER LES NODES SOUS LA MAISON
-            Collider2D[] nodeHits = Physics2D.OverlapBoxAll(worldPos, size, 0f, LayerMask.GetMask("Nodes"));
-            Debug.Log("Nodes trouvés sous la maison: " + nodeHits.Length);
+            // Marque la cellule comme dernière utilisée
+            lastPlacedObjectCell = cell;
 
             if (housePlacer != null)
             {
                 housePlacer.HandleHouseBlocking(placed);
+            }
+            House newHouse = placed.GetComponent<House>();
+            if (newHouse != null)
+            {
+                newHouse.RegisterOccupiedNodes(); // <<< AJOUT ESSENTIEL
+
+                PNJ[] allPNJs = FindObjectsByType<PNJ>(FindObjectsSortMode.None);
+                foreach (PNJ pnj in allPNJs)
+                {
+                    if (pnj.assignedHouse == null)
+                    {
+                        // Déclenche une tentative d’affectation
+                        pnj.Invoke("TryAssignOrGoIdle", 0f);
+                    }
+                }
             }
         }
         else
@@ -283,7 +310,15 @@ public class TilePlacerUi : MonoBehaviour
 
             PlaceableObject id = draggedObject.GetComponent<PlaceableObject>();
             if (id != null && id.objectIndex >= 0 && id.objectIndex < previewObjects.Length)
-                currentPreview = Instantiate(previewObjects[id.objectIndex]);
+            {
+                selectedIndex = id.objectIndex;
+                currentObjectSize = (placeableObjects[selectedIndex].name.Contains("Road"))
+                    ? ObjectSize.OneByOne
+                    : ObjectSize.TwoByTwo;
+
+                currentPreview = Instantiate(previewObjects[selectedIndex]);
+                MakePreview(currentPreview);
+            }
 
             currentPreview.transform.position = SnapToGrid(originalPosition);
             draggedObject.SetActive(false);
@@ -301,7 +336,6 @@ public class TilePlacerUi : MonoBehaviour
 
                 targetTilemap.SetTile(cell, null); // on "prend" la tile
 
-                // Crée un aperçu de la tile (optionnel)
                 if (currentPreview) Destroy(currentPreview);
                 currentPreview = new GameObject("TilePreview");
                 SpriteRenderer sr = currentPreview.AddComponent<SpriteRenderer>();
@@ -333,8 +367,24 @@ public class TilePlacerUi : MonoBehaviour
 
         if (draggedObject != null)
         {
-            draggedObject.transform.position = worldPos;
-            draggedObject.SetActive(true);
+            // Calcule la taille de la zone occupée par l'objet
+            float cellSize = targetTilemap.cellSize.x;
+            Vector2 size = (currentObjectSize == ObjectSize.OneByOne)
+                ? new Vector2(cellSize, cellSize)
+                : new Vector2(2f * cellSize, 2f * cellSize);
+
+            if (IsAreaClear(worldPos, size))
+            {
+                draggedObject.transform.position = worldPos;
+                draggedObject.SetActive(true);
+            }
+            else
+            {
+                // Collision détectée : remettre à sa position d'origine
+                draggedObject.transform.position = originalPosition;
+                draggedObject.SetActive(true);
+            }
+
             draggedObject = null;
         }
 
@@ -367,7 +417,7 @@ public class TilePlacerUi : MonoBehaviour
         Collider2D[] hits = Physics2D.OverlapBoxAll(center, size, 0f, LayerMask.GetMask("Buildings"));
 
         //  Réduction légère des bounds pour éviter les bords qui se touchent
-        Vector3 shrinkedSize = size * 0.98f; // 2% plus petit
+        Vector3 shrinkedSize = size * 0.30f; // 30% plus petit
         Bounds newBounds = new Bounds(center, shrinkedSize);
 
         foreach (var hit in hits)

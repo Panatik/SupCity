@@ -5,6 +5,7 @@ public class NPC_Controller : MonoBehaviour
 {
     public Node currentNode;
     public List<Node> path = new List<Node>();
+    private SpriteRenderer spriteRenderer;
     public Node targetNode;
 
     private int currentPathIndex = 0;
@@ -12,6 +13,8 @@ public class NPC_Controller : MonoBehaviour
 
     private void Start()
     {
+        spriteRenderer = GetComponent<SpriteRenderer>();
+
         // Si currentNode n'est pas défini, on le détecte automatiquement
         if (currentNode == null)
         {
@@ -47,8 +50,21 @@ public class NPC_Controller : MonoBehaviour
             return;
 
         Node nextNode = path[currentPathIndex];
-        Vector3 targetPos = new Vector3(nextNode.transform.position.x, nextNode.transform.position.y, -2);
+        Vector3 targetPos = new Vector3(nextNode.transform.position.x, nextNode.transform.position.y, 0);
         transform.position = Vector3.MoveTowards(transform.position, targetPos, speed * Time.deltaTime);
+
+        Vector3 direction = (targetPos - transform.position).normalized;
+        if (Mathf.Abs(direction.x) > Mathf.Abs(direction.y)) 
+        {
+            if (direction.x > 0)
+            {
+                spriteRenderer.flipX = true;
+            }
+            else if (direction.x < 0) 
+            {
+                spriteRenderer.flipX = false;
+            }
+        }
 
         if (Vector2.Distance(transform.position, nextNode.transform.position) < 0.1f)
         {
@@ -82,7 +98,7 @@ public class NPC_Controller : MonoBehaviour
             return;
         }
 
-        Debug.Log($"Recalculating path from {currentNode.name} to {targetNode.name}");
+        //Debug.Log($"Recalculating path from {currentNode.name} to {targetNode.name}");
 
         List<Node> newPath = AStarManager.instance.GeneratePath(currentNode, targetNode);
         if (newPath == null || newPath.Count == 0)
@@ -91,7 +107,7 @@ public class NPC_Controller : MonoBehaviour
             return;
         }
 
-        Debug.Log("Path successfully calculated with " + newPath.Count + " nodes.");
+        //Debug.Log("Path successfully calculated with " + newPath.Count + " nodes.");
 
         path = newPath;
         currentPathIndex = 0;
