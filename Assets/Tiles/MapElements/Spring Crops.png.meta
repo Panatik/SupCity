@@ -1,0 +1,590 @@
+fileFormatVersion: 2
+guid: 1f946e6d92b8775458eccedc7c7b7b20
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 8369948372191450990
+    second: Spring Crops_0
+  - first:
+      213: -3402868906910896487
+    second: Spring Crops_1
+  - first:
+      213: 7953443401717196921
+    second: Spring Crops_2
+  - first:
+      213: 240733362411572873
+    second: Spring Crops_3
+  - first:
+      213: 1734387795819554390
+    second: Spring Crops_4
+  - first:
+      213: 8578180459406042070
+    second: Spring Crops_5
+  - first:
+      213: 3706471016571915744
+    second: Spring Crops_6
+  - first:
+      213: 2301922973543145194
+    second: Spring Crops_7
+  - first:
+      213: -1034690453324800654
+    second: Spring Crops_8
+  - first:
+      213: 330651644575631463
+    second: Spring Crops_9
+  - first:
+      213: -2399177842247141646
+    second: Spring Crops_10
+  - first:
+      213: 4209240044320245080
+    second: Spring Crops_11
+  - first:
+      213: -8677211718366676707
+    second: Spring Crops_12
+  - first:
+      213: 5186682900284683890
+    second: Spring Crops_13
+  - first:
+      213: -215653223752782615
+    second: Spring Crops_14
+  - first:
+      213: 3289653190777089658
+    second: Spring Crops_15
+  - first:
+      213: -5066668921399660160
+    second: Spring Crops_16
+  - first:
+      213: 2868446355547618523
+    second: Spring Crops_17
+  - first:
+      213: -317592646122885040
+    second: Spring Crops_18
+  - first:
+      213: 4861662748524225573
+    second: Spring Crops_19
+  - first:
+      213: -6289053032045062706
+    second: Spring Crops_20
+  - first:
+      213: 2484816382080541559
+    second: Spring Crops_21
+  - first:
+      213: -134654057516976897
+    second: Spring Crops_22
+  - first:
+      213: 4369838757112454489
+    second: Spring Crops_23
+  - first:
+      213: 3637970704561575544
+    second: Spring Crops_24
+  - first:
+      213: 4518220018301987133
+    second: Spring Crops_25
+  - first:
+      213: -215264509091159299
+    second: Spring Crops_26
+  - first:
+      213: -6706443759888266369
+    second: Spring Crops_27
+  - first:
+      213: 3367870417585019489
+    second: Spring Crops_28
+  - first:
+      213: 2109489747490457824
+    second: Spring Crops_29
+  - first:
+      213: 7952700809700035530
+    second: Spring Crops_30
+  - first:
+      213: 2303892717736303439
+    second: Spring Crops_31
+  - first:
+      213: -5752873257389657301
+    second: Spring Crops_32
+  - first:
+      213: -8286018175113047878
+    second: Spring Crops_33
+  - first:
+      213: -4121517270082971212
+    second: Spring Crops_34
+  - first:
+      213: -1800126058511640119
+    second: Spring Crops_35
+  - first:
+      213: -1957658871821922118
+    second: Spring Crops_36
+  - first:
+      213: -551511011614809637
+    second: Spring Crops_37
+  - first:
+      213: 1942767228105140428
+    second: Spring Crops_38
+  - first:
+      213: 8197133288706426242
+    second: Spring Crops_39
+  - first:
+      213: 8523965287709476415
+    second: Spring Crops_40
+  - first:
+      213: 8849037320410730604
+    second: Spring Crops_41
+  - first:
+      213: -2004733081760871359
+    second: Spring Crops_42
+  - first:
+      213: 7970753316438003428
+    second: Spring Crops_43
+  - first:
+      213: 4748092831001568428
+    second: Spring Crops_44
+  - first:
+      213: -1142901117228979249
+    second: Spring Crops_45
+  - first:
+      213: 4206968556728965966
+    second: Spring Crops_46
+  - first:
+      213: 8843743897560898563
+    second: Spring Crops_47
+  - first:
+      213: -7830120500774409351
+    second: Spring Crops_48
+  - first:
+      213: 6842404889414440947
+    second: Spring Crops_49
+  - first:
+      213: 851531240181107305
+    second: Spring Crops_50
+  - first:
+      213: -8582542756511483061
+    second: Spring Crops_51
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Cocoa_Seeds
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 96
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e6794d8d2b7082470800000000000000
+      internalID: 8369948372191450990
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cocoa_1
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 96
+        width: 12
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 99eaa5222c496c0d0800000000000000
+      internalID: -3402868906910896487
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cocoa_2
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 96
+        width: 12
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 978278c72ae406e60800000000000000
+      internalID: 7953443401717196921
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cocoa_3
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 96
+        width: 12
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 98e8028b7b1475300800000000000000
+      internalID: 240733362411572873
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cocoa_4
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 96
+        width: 12
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 656e898d288c11810800000000000000
+      internalID: 1734387795819554390
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cocoa_5
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 96
+        width: 12
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6d3281ebda1db0770800000000000000
+      internalID: 8578180459406042070
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Coffee_Seeds
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 33
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f7b89b1ceecede2a0800000000000000
+      internalID: -6706443759888266369
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Coffee_1
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 32
+        width: 11
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 16a93b11d441dbe20800000000000000
+      internalID: 3367870417585019489
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Coffee_2
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 32
+        width: 11
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0e84f70bfb9664d10800000000000000
+      internalID: 2109489747490457824
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Coffee_3
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 32
+        width: 11
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: acbc12f404bad5e60800000000000000
+      internalID: 7952700809700035530
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Coffee_4
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 32
+        width: 11
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f4b1841683219ff10800000000000000
+      internalID: 2303892717736303439
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Coffee_5
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 32
+        width: 11
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b23f17f9040b920b0800000000000000
+      internalID: -5752873257389657301
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: d8a83d437c2ad234e91c21b7d874d2f0
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      0: 3367870417585019489
+      Cocoa_1: -3402868906910896487
+      Cocoa_2: 7953443401717196921
+      Cocoa_3: 240733362411572873
+      Cocoa_4: 1734387795819554390
+      Cocoa_5: 8578180459406042070
+      Cocoa_Seeds: 8369948372191450990
+      Coffee_1: 3367870417585019489
+      Coffee_2: 2109489747490457824
+      Coffee_3: 7952700809700035530
+      Coffee_4: 2303892717736303439
+      Coffee_5: -5752873257389657301
+      Coffee_Seeds: -6706443759888266369
+      Spring Crops_10: -2399177842247141646
+      Spring Crops_11: 4209240044320245080
+      Spring Crops_12: -8677211718366676707
+      Spring Crops_13: 5186682900284683890
+      Spring Crops_14: -215653223752782615
+      Spring Crops_15: 3289653190777089658
+      Spring Crops_16: -5066668921399660160
+      Spring Crops_17: 2868446355547618523
+      Spring Crops_18: -317592646122885040
+      Spring Crops_19: 4861662748524225573
+      Spring Crops_20: -6289053032045062706
+      Spring Crops_21: 2484816382080541559
+      Spring Crops_22: -134654057516976897
+      Spring Crops_23: 4369838757112454489
+      Spring Crops_24: 3637970704561575544
+      Spring Crops_25: 4518220018301987133
+      Spring Crops_26: -215264509091159299
+      Spring Crops_33: -8286018175113047878
+      Spring Crops_34: -4121517270082971212
+      Spring Crops_35: -1800126058511640119
+      Spring Crops_36: -1957658871821922118
+      Spring Crops_37: -551511011614809637
+      Spring Crops_38: 1942767228105140428
+      Spring Crops_39: 8197133288706426242
+      Spring Crops_40: 8523965287709476415
+      Spring Crops_41: 8849037320410730604
+      Spring Crops_42: -2004733081760871359
+      Spring Crops_43: 7970753316438003428
+      Spring Crops_44: 4748092831001568428
+      Spring Crops_45: -1142901117228979249
+      Spring Crops_46: 4206968556728965966
+      Spring Crops_47: 8843743897560898563
+      Spring Crops_48: -7830120500774409351
+      Spring Crops_49: 6842404889414440947
+      Spring Crops_50: 851531240181107305
+      Spring Crops_51: -8582542756511483061
+      Spring Crops_6: 3706471016571915744
+      Spring Crops_7: 2301922973543145194
+      Spring Crops_8: -1034690453324800654
+      Spring Crops_9: 330651644575631463
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
