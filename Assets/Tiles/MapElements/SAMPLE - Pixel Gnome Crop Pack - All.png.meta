@@ -283,6 +283,50 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: Barley_Seeds
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 95
+        width: 16
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 95e4c540514c9fc4a95815d9f47853f8
+      internalID: -29892467
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hops_Seeds
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 130
+        width: 14
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e2f3d1c9135f69d45b56eb9016367af0
+      internalID: -1138945065
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     customData: 
     physicsShape: []
@@ -301,7 +345,8 @@ TextureImporter:
       Barley_2: -4249994314895456765
       Barley_3: -8961606977399529104
       Barley_4: 5679406924721479067
-      SAMPLE - Pixel Gnome Crop Pack - All_0: -3972201276048561012
+      Barley_Seeds: -3972201276048561012
+      Hops_Seeds: -1138945065
       SAMPLE - Pixel Gnome Crop Pack - All_1: -7930248894731741273
       SAMPLE - Pixel Gnome Crop Pack - All_12: -2885202418304940268
       SAMPLE - Pixel Gnome Crop Pack - All_13: 2465846724993958518
