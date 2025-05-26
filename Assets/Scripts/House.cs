@@ -38,7 +38,7 @@ public class House : MonoBehaviour
         occupiedNodes.Clear();
 
         Node[] allNodes = FindObjectsByType<Node>(FindObjectsSortMode.None);
-        Bounds houseBounds = GetComponent<Collider2D>().bounds;
+        Bounds houseBounds = GetComponentInChildren<Collider2D>().bounds;
 
         foreach (Node node in allNodes)
         {

@@ -50,7 +50,7 @@ public class NPC_Controller : MonoBehaviour
             return;
 
         Node nextNode = path[currentPathIndex];
-        Vector3 targetPos = new Vector3(nextNode.transform.position.x, nextNode.transform.position.y, -2);
+        Vector3 targetPos = new Vector3(nextNode.transform.position.x, nextNode.transform.position.y, 0);
         transform.position = Vector3.MoveTowards(transform.position, targetPos, speed * Time.deltaTime);
 
         Vector3 direction = (targetPos - transform.position).normalized;

@@ -17,7 +17,7 @@ public class PNJ : MonoBehaviour
 
     void Start()
     {
-        currentNode = GetClosestNode(transform.position);
+
     }
 
     void Update()
@@ -82,31 +82,47 @@ public class PNJ : MonoBehaviour
         if (assignedHouse != null)
         {
             Node bestTargetNode = GetClosestNodeAmong(assignedHouse.GetOccupiedNodes());
-            currentPath = AStarManager.instance.GeneratePath(GetClosestNode(transform.position), bestTargetNode);
+            Node startNode = GetClosestNode(transform.position);
+
+            if (bestTargetNode == null || startNode == null)
+            {
+                Debug.LogWarning($"[PNJ] Impossible de générer un chemin : Node de départ ou d’arrivée null. { bestTargetNode}  { startNode} {transform.position}");
+                return;
+            }
+
+            currentPath = AStarManager.instance.GeneratePathTEST(startNode, bestTargetNode);
             currentPathIndex = 0;
             isIdle = false;
         }
     }
 
-    Node GetClosestNode(Vector3 position)
+    Node GetClosestNode(Vector2 position)
     {
         Node[] allNodes = FindObjectsByType<Node>(FindObjectsSortMode.None);
+        //Debug.Log($"[GetClosestNode] Il y a {allNodes.Length} nodes dans la scène.");
+
         Node closest = null;
         float minDist = Mathf.Infinity;
 
-        foreach (var node in allNodes)
+        foreach (Node node in allNodes)
         {
-            float dist = Vector2.Distance(position, node.transform.position);
-            if (dist < minDist && !node.IsBlocked)
+            if (node == null)
             {
-                closest = node;
+                //Debug.LogWarning("[GetClosestNode] Un node dans la liste est null !");
+                continue;
+            }
+
+            float dist = Vector2.Distance(position, node.transform.position);
+            if (dist < minDist)
+            {
                 minDist = dist;
+                closest = node;
             }
         }
 
         if (closest == null)
         {
-            Debug.LogWarning($"[PNJ] Aucun Node trouvé près de la position {position}");
+            Debug.LogWarning($"[GetClosestNode] Aucun node trouvé autour de {position}");
         }
 
         return closest;
@@ -117,16 +133,16 @@ public class PNJ : MonoBehaviour
         Node closest = null;
         float minDist = Mathf.Infinity;
 
-        foreach (var node in nodes)
+        foreach (Node node in nodes)
         {
             float dist = Vector2.Distance(transform.position, node.transform.position);
-            if (dist < minDist && !node.IsBlocked)
+            if (dist < minDist)
             {
                 closest = node;
                 minDist = dist;
             }
         }
-
+        //Debug.Log($"[GetClosestNode] Node maison : {closest.transform.position}");
         return closest;
     }
 
