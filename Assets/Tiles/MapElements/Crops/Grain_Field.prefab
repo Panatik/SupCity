@@ -179,6 +179,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c6c7dde45b15944ebf6cfe4907d5cc6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  harvest_amount: 1
+  resource_name: wheat
   sprites:
   - {fileID: 3703259055243465117, guid: 321b18b192ba58c47b5c40bcc67b171a, type: 3}
   - {fileID: -1724842945715286110, guid: 321b18b192ba58c47b5c40bcc67b171a, type: 3}

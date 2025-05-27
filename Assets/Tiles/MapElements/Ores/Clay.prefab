@@ -176,6 +176,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 2157408905281398348}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3693f05e3a7d89147ac3739e93a32cd2, type: 3}
+  m_Script: {fileID: 11500000, guid: 85f85bf3b5eca59448d3f0927b4eab56, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  harvest_amount: 1
+  resource_name: clay

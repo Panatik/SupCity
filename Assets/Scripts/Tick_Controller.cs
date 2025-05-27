@@ -5,9 +5,9 @@ using UnityEngine.UI;
 
 public class Tick_Controller : MonoBehaviour
 {
-    public int current_tick = 0;
+    private int current_tick = 0;
     private float curr_time;
-    private int tick_multiplier = 10;
+    private int tick_multiplier = 1;
 
     void Start()
     {
@@ -20,7 +20,6 @@ public class Tick_Controller : MonoBehaviour
         {
             current_tick += tick_multiplier;
             curr_time = Time.time;
-            print(current_tick);
         }
     }
 

@@ -98,9 +98,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 4527467948872674946}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b0b20e57bb73641428bb1e09299d5e22, type: 3}
+  m_Script: {fileID: 11500000, guid: 85f85bf3b5eca59448d3f0927b4eab56, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  harvest_amount: 1
+  resource_name: coal
 --- !u!1 &4941199670041782404
 GameObject:
   m_ObjectHideFlags: 0

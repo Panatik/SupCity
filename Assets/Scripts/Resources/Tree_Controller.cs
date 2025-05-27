@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Tree_Controller : MonoBehaviour
-{
-    private bool is_harvestable;
+public class Tree_Controller : Harvestable_Controller {
+
+    const int GROW_TIME = 200;        // value to change
     public Sprite trunk_spr;
     public Sprite tree_spr;
     public Tick_Controller tick_logic;
@@ -23,7 +23,7 @@ public class Tree_Controller : MonoBehaviour
             return;
         }
         int curr_tick = tick_logic.get_tick();
-        if (curr_tick >= tick_stamp + 55500)  // value to change
+        if (curr_tick >= tick_stamp + GROW_TIME)
         {
             grow_tree();
         }
@@ -33,11 +33,15 @@ public class Tree_Controller : MonoBehaviour
         is_harvestable = true;
         GetComponent<SpriteRenderer>().sprite = tree_spr;
     }
-    [ContextMenu("cut tree")]
     public void cut_tree()
     {
         is_harvestable = false;
         GetComponent<SpriteRenderer>().sprite = trunk_spr;
         tick_stamp = tick_logic.get_tick();
+    }
+    [ContextMenu("Cut tree !")]
+    public override Dictionary<string, int> harvest() {
+        cut_tree();
+        return base.harvest();
     }
 }

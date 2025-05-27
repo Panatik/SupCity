@@ -101,6 +101,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c6c7dde45b15944ebf6cfe4907d5cc6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  harvest_amount: 1
+  resource_name: barley
   sprites:
   - {fileID: -2951745947471770776, guid: 1701cc6d84a301e4282494c36496793d, type: 3}
   - {fileID: -4249994314895456765, guid: 1701cc6d84a301e4282494c36496793d, type: 3}

@@ -183,6 +183,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 305d6f41d5d141e4a9f35450f0e5b082, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  harvest_amount: 1
+  resource_name: berry
   empty_sprite: {fileID: 8661651960862297898, guid: c7357aa5ad8ed5a4eaa08c3bfe9b0708, type: 3}
   hable_sprites:
   - {fileID: 2710443080846324409, guid: c7357aa5ad8ed5a4eaa08c3bfe9b0708, type: 3}

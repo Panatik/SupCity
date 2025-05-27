@@ -180,6 +180,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1ab8a2ae73780d49b0fa39d423e54f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  harvest_amount: 1
+  resource_name: wood
   trunk_spr: {fileID: -2074132150, guid: c7357aa5ad8ed5a4eaa08c3bfe9b0708, type: 3}
   tree_spr: {fileID: -4060402318970035109, guid: c7357aa5ad8ed5a4eaa08c3bfe9b0708, type: 3}
   tick_logic: {fileID: 0}

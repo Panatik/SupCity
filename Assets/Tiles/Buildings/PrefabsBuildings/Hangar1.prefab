@@ -162,6 +162,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fda90f60f4ed835448a1e040bc6c2428, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  storable_resources:
+  - wood
+  - board
+  - stone
+  - sand
+  - limestone
+  - paper
+  - coal
+  - clay
+  - clay_tablet
+  - brick
+  - cloth
+  - glass
+  storage_capacity: 1800
+  storage_priority: 1
 --- !u!1 &6920633263533068279
 GameObject:
   m_ObjectHideFlags: 0

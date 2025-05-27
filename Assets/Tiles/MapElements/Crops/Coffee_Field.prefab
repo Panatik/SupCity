@@ -101,6 +101,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c6c7dde45b15944ebf6cfe4907d5cc6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  harvest_amount: 1
+  resource_name: coffee_bean
   sprites:
   - {fileID: 3367870417585019489, guid: 1f946e6d92b8775458eccedc7c7b7b20, type: 3}
   - {fileID: 2109489747490457824, guid: 1f946e6d92b8775458eccedc7c7b7b20, type: 3}

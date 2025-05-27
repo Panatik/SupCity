@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Bush_Controller : MonoBehaviour
-{
-    private bool is_harvestable;
+public class Bush_Controller : Harvestable_Controller {
+
+    const int GROW_TIME = 270;        // 270 seconds
     public Sprite empty_sprite;
     public Sprite[] hable_sprites;
     public Tick_Controller tick_logic;
@@ -23,7 +23,7 @@ public class Bush_Controller : MonoBehaviour
             return;
         }
         int curr_tick = tick_logic.get_tick();
-        if (curr_tick >= tick_stamp + 270)        // 270 seconds
+        if (curr_tick >= tick_stamp + GROW_TIME)
         {
             refill_bush();
         }
@@ -36,11 +36,15 @@ public class Bush_Controller : MonoBehaviour
         int spr_num = Random.Range(0, 3);
         GetComponent<SpriteRenderer>().sprite = hable_sprites[spr_num];
     }
-    [ContextMenu("harvest bush")]
     public void harvest_bush()
     {
         is_harvestable = false;
         GetComponent<SpriteRenderer>().sprite = empty_sprite;
         tick_stamp = tick_logic.get_tick();
+    }
+    [ContextMenu("Harvest bush !")]
+    public override Dictionary<string, int> harvest() {
+        harvest_bush();
+        return base.harvest();
     }
 }
