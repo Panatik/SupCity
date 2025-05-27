@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 3109460742595676207}
   - component: {fileID: 386346056468188198}
   - component: {fileID: 1381564567741533853}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Coal_Ore
-  m_TagString: Untagged
+  m_TagString: Buildings
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -111,7 +111,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8618654542442110855}
   - component: {fileID: 4218449756695185868}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Box_Collider
   m_TagString: Untagged
   m_Icon: {fileID: 0}

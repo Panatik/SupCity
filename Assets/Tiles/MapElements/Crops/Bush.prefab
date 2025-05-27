@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8257823889947524242}
   - component: {fileID: 1544309323052083082}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Box_Collider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -89,9 +89,9 @@ GameObject:
   - component: {fileID: 8074932587030704923}
   - component: {fileID: 5294263537888196427}
   - component: {fileID: 4342395400227900708}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Bush
-  m_TagString: Untagged
+  m_TagString: Buildings
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

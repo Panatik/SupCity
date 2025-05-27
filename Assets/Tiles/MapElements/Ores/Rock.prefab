@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 8187287720128207510}
   - component: {fileID: 1932388861277202772}
   - component: {fileID: 6159012706522999103}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Rock
-  m_TagString: Untagged
+  m_TagString: Buildings
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -111,7 +111,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6930895666981829249}
   - component: {fileID: 4716853330946615261}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Box_Collider
   m_TagString: Untagged
   m_Icon: {fileID: 0}

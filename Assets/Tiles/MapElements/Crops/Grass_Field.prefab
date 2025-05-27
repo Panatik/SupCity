@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4934526811490045856}
   - component: {fileID: 3175297702438798478}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Box_Collider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -89,9 +89,9 @@ GameObject:
   - component: {fileID: 1080446033739677242}
   - component: {fileID: 3358147730682628389}
   - component: {fileID: 7243107667903179528}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Grass_Field
-  m_TagString: Untagged
+  m_TagString: Buildings
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 2039574366793479640}
   - component: {fileID: 8323725476400055947}
   - component: {fileID: 2928209123807756054}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Barley_FIeld
-  m_TagString: Untagged
+  m_TagString: Buildings
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -117,7 +117,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3305828969491119599}
   - component: {fileID: 338328096356927935}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Box_Collider
   m_TagString: Untagged
   m_Icon: {fileID: 0}

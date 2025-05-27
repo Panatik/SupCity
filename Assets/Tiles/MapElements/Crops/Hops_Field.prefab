@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 1044607187525372081}
   - component: {fileID: 952421023330575775}
   - component: {fileID: 1420581132432865604}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Hops_Field
-  m_TagString: Untagged
+  m_TagString: Buildings
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -117,7 +117,7 @@ GameObject:
   m_Component:
   - component: {fileID: 557777403815598592}
   - component: {fileID: 2583930319504495055}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Box_Collider
   m_TagString: Untagged
   m_Icon: {fileID: 0}

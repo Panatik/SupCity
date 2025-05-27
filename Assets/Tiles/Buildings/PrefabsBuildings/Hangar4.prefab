@@ -98,6 +98,7 @@ GameObject:
   - component: {fileID: 547971889539887270}
   - component: {fileID: -5161110767559178671}
   - component: {fileID: -8598283242767012844}
+  - component: {fileID: 7678310687061537546}
   m_Layer: 3
   m_Name: Hangar4
   m_TagString: Buildings
@@ -149,6 +150,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   house_level: 2
+--- !u!114 &7678310687061537546
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6703591653845088059}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fda90f60f4ed835448a1e040bc6c2428, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6920633263533068279
 GameObject:
   m_ObjectHideFlags: 0

@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6259600780915954492}
   - component: {fileID: 5114804610515889552}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Box_Collider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -89,9 +89,9 @@ GameObject:
   - component: {fileID: 3293259231461152433}
   - component: {fileID: 2831986569663942795}
   - component: {fileID: 6361371203831662017}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Grain_Field
-  m_TagString: Untagged
+  m_TagString: Buildings
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
