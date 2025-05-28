@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4925716056359879487}
   - component: {fileID: 5791157460383294551}
-  - component: {fileID: 1835333876958400324}
   - component: {fileID: 2233252671271537925}
   m_Layer: 0
   m_Name: Circle
@@ -89,22 +88,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1835333876958400324
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1568319584691381255}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 162e8aca79314864bb10aa0475a69f42, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  currentNode: {fileID: 0}
-  path: []
-  targetNode: {fileID: 0}
-  speed: 3
 --- !u!114 &2233252671271537925
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -117,3 +100,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04faf86003b8e85499e9e36f1bb010c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  moveSpeed: 3
+  currentNode: {fileID: 0}
+  targetNode: {fileID: 0}
+  assignedHouse: {fileID: 0}
+  idleCheckCooldown: 30

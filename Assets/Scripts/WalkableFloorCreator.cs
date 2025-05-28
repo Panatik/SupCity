@@ -27,7 +27,7 @@ public class WalkableFloorCreator : MonoBehaviour
     public List<Node> nodeList;
 
     //public NPC_Controller npc;
-    public List<NPC_Controller> npcPrefabs;
+    public List<PNJ> npcPrefabs;
 
     private bool canDrawGizmos;
 
@@ -164,9 +164,9 @@ public class WalkableFloorCreator : MonoBehaviour
 
         // Choisir un prefab aléatoire
         int index = Random.Range(0, npcPrefabs.Count);
-        NPC_Controller chosenNPC = npcPrefabs[index];
+        PNJ chosenNPC = npcPrefabs[index];
 
-        NPC_Controller newNPC = Instantiate(chosenNPC, spawnNode.transform.position, Quaternion.identity);
+        PNJ newNPC = Instantiate(chosenNPC, spawnNode.transform.position, Quaternion.identity);
         newNPC.currentNode = spawnNode;
 
         Debug.Log("NPC spawn à : " + spawnNode.transform.position);

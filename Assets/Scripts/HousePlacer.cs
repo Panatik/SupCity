@@ -9,6 +9,8 @@ public class HousePlacer : MonoBehaviour
     public GameObject housePrefab;
     public Transform houseParent;
 
+    private Dictionary<GameObject, List<Node>> houseToBlockedNodes = new Dictionary<GameObject, List<Node>>();
+
     // Appelle cette méthode quand tu places une maison
     public void PlaceHouse(Vector3 position)
     {
@@ -18,11 +20,15 @@ public class HousePlacer : MonoBehaviour
 
     public void HandleHouseBlocking(GameObject house)
     {
-        foreach (Node node in previouslyBlockedNodes)
+        // Nettoyage des anciens blocs s’il y avait une maison au même emplacement
+        if (houseToBlockedNodes.ContainsKey(house))
         {
-            node.RemoveBlocker();
+            foreach (Node node in houseToBlockedNodes[house])
+            {
+                node.RemoveBlocker();
+            }
+            houseToBlockedNodes.Remove(house);
         }
-        previouslyBlockedNodes.Clear();
 
         if (house != null)
         {
@@ -33,18 +39,20 @@ public class HousePlacer : MonoBehaviour
                 LayerMask.GetMask("Nodes")
             );
 
+            List<Node> blockedNodes = new List<Node>();
+
             foreach (Collider2D hit in nodeHits)
             {
                 Node node = hit.GetComponent<Node>();
                 if (node != null)
                 {
                     node.AddBlocker();
-                    previouslyBlockedNodes.Add(node);
+                    blockedNodes.Add(node);
                 }
             }
-        }
 
-        //UpdateNodeConnectionsAround(house.transform.position, 2f);
+            houseToBlockedNodes[house] = blockedNodes;
+        }
 
         foreach (var npc in FindObjectsByType<NPC_Controller>(FindObjectsSortMode.None))
         {
@@ -111,6 +119,24 @@ public class HousePlacer : MonoBehaviour
                         node.connections.Add(neighbor);
                     }
                 }
+            }
+        }
+    }
+
+    public void UnblockHouseArea(GameObject house)
+    {
+        if (house != null && houseToBlockedNodes.ContainsKey(house))
+        {
+            foreach (Node node in houseToBlockedNodes[house]) { 
+                node.RemoveBlocker();
+            }
+
+            houseToBlockedNodes.Remove(house);
+
+            UpdateNodeConnectionsAround(house.transform.position, 2f);
+
+            foreach (var npc in FindObjectsByType<PNJ>(FindObjectsSortMode.None)) { 
+                npc.RecalculatePath();
             }
         }
     }

@@ -12,8 +12,8 @@ public class Node : MonoBehaviour
 
     // Ajout d'un booléen pour bloquer le node
     //public bool isBlocked = false;
-    public bool IsBlocked { get; private set; } = false;
-    private int blockCount = 0;
+    public bool IsBlocked => blockCount > 0;
+    public int blockCount = 0;
 
     public float FScore() 
     {
@@ -22,12 +22,12 @@ public class Node : MonoBehaviour
 
     public void AddBlocker()
     {
-        IsBlocked = true;
+        blockCount++;
     }
 
     public void RemoveBlocker()
     {
-        IsBlocked = false;
+        blockCount = Mathf.Max(0, blockCount - 1);
     }
 
     private void OnDrawGizmos()

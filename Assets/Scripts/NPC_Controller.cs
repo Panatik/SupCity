@@ -100,7 +100,7 @@ public class NPC_Controller : MonoBehaviour
 
         //Debug.Log($"Recalculating path from {currentNode.name} to {targetNode.name}");
 
-        List<Node> newPath = AStarManager.instance.GeneratePath(currentNode, targetNode);
+        List<Node> newPath = AStarManager.instance.GeneratePath(currentNode, targetNode, true);
         if (newPath == null || newPath.Count == 0)
         {
             Debug.LogWarning("No valid path found for " + gameObject.name);

@@ -308,6 +308,11 @@ public class TilePlacerUi : MonoBehaviour
             draggedObject = hit.transform.root.gameObject;
             originalPosition = draggedObject.transform.position;
 
+            if (housePlacer != null) 
+            {
+                housePlacer.UnblockHouseArea(draggedObject);
+            }
+
             PlaceableObject id = draggedObject.GetComponent<PlaceableObject>();
             if (id != null && id.objectIndex >= 0 && id.objectIndex < previewObjects.Length)
             {
@@ -385,6 +390,27 @@ public class TilePlacerUi : MonoBehaviour
                 draggedObject.SetActive(true);
             }
 
+            if (housePlacer != null)
+            {
+                housePlacer.HandleHouseBlocking(draggedObject);
+            }
+
+            House movedHouse = draggedObject.GetComponent<House>();
+            if (movedHouse != null)
+            {
+                movedHouse.RegisterOccupiedNodes();
+
+                // Réassignation des PNJs
+                PNJ[] allPNJs = FindObjectsByType<PNJ>(FindObjectsSortMode.None);
+                foreach (PNJ pnj in allPNJs)
+                {
+                    if (pnj.assignedHouse == null)
+                    {
+                        pnj.Invoke("TryAssignOrGoIdle", 0f);
+                    }
+                }
+            }
+
             draggedObject = null;
         }
 
@@ -392,9 +418,6 @@ public class TilePlacerUi : MonoBehaviour
             Destroy(currentPreview);
 
         isDragging = false;
-
-        if (housePlacer != null)
-            housePlacer.HandleHouseBlocking(draggedObject);
     }
 
     bool CanPlaceAt(Vector3Int cellPos)

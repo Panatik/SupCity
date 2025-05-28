@@ -1746,8 +1746,8 @@ MonoBehaviour:
   nodePrefab: {fileID: 1156480304519338005, guid: d4a1e28f28c8c7c469b3a9100959eaf0, type: 3}
   nodeList: []
   npcPrefabs:
-  - {fileID: 1835333876958400324, guid: de531a28e0c71eb42beee0cdfa075297, type: 3}
-  - {fileID: 1835333876958400324, guid: 53d28bb09ab02da4f87ba9a70b816ad1, type: 3}
+  - {fileID: 6796447361938920401, guid: 53d28bb09ab02da4f87ba9a70b816ad1, type: 3}
+  - {fileID: -6500679580449124090, guid: de531a28e0c71eb42beee0cdfa075297, type: 3}
 --- !u!1 &912089651
 GameObject:
   m_ObjectHideFlags: 0
@@ -72856,7 +72856,7 @@ AudioSource:
   m_Volume: 1
   m_Pitch: 1
   Loop: 1
-  Mute: 0
+  Mute: 1
   Spatialize: 0
   SpatializePostEffects: 0
   Priority: 128

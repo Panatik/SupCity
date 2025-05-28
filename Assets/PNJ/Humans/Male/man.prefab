@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 4925716056359879487}
   - component: {fileID: 5791157460383294551}
   - component: {fileID: 5523586922276465527}
-  - component: {fileID: 1835333876958400324}
   - component: {fileID: 6796447361938920401}
   m_Layer: 0
   m_Name: man
@@ -112,22 +111,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &1835333876958400324
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1568319584691381255}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 162e8aca79314864bb10aa0475a69f42, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  currentNode: {fileID: 0}
-  path: []
-  targetNode: {fileID: 0}
-  speed: 3
 --- !u!114 &6796447361938920401
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -141,4 +124,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 2
+  currentPath: []
+  currentNode: {fileID: 0}
+  targetNode: {fileID: 0}
   assignedHouse: {fileID: 0}
+  idleCheckCooldown: 30
