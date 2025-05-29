@@ -4,10 +4,15 @@ using UnityEngine;
 public class House : MonoBehaviour
 {
     [Header("Configuration")]
+    public int houseLevel = 2;
     public int maxOccupants = 2;
 
     private List<PNJ> occupants = new List<PNJ>();
     private List<Node> occupiedNodes = new List<Node>();
+
+    public Sprite house;
+    public string houseName;
+    public string description;
 
     private void Start()
     {
@@ -80,5 +85,16 @@ public class House : MonoBehaviour
     public List<Node> GetOccupiedNodes()
     {
         return occupiedNodes;
+    }
+
+    public void AfficherInfos()
+    {
+        // Appelle le UIManager pour afficher les infos
+        HouseUi.Instance.AfficherMenuMaison(this);
+    }
+
+    private void OnMouseDown()
+    {
+        AfficherInfos();
     }
 }

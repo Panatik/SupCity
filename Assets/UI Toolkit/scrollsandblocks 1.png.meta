@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: f25e0c6d3b1ac8141b345a974da0867e
+guid: d90568c31268a5440aeade41e442abe3
 TextureImporter:
   internalIDToNameTable:
   - first:
@@ -119,101 +119,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: scrollsandblocks_0
+      name: scrollsandblocks 1_0
       rect:
         serializedVersion: 2
-        x: 320
-        y: 182
-        width: 33
-        height: 127
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 42075e296b4014a10800000000000000
-      internalID: 1891798500667387940
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: scrollsandblocks_1
-      rect:
-        serializedVersion: 2
-        x: 352
-        y: 0
-        width: 192
-        height: 193
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 94acc2c9ea5947990800000000000000
-      internalID: -7389116511431112119
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: scrollsandblocks_2
-      rect:
-        serializedVersion: 2
-        x: 354
-        y: 191
-        width: 92
-        height: 98
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 003c91a6f32f35850800000000000000
-      internalID: 6364697052581577472
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: scrollsandblocks_3
-      rect:
-        serializedVersion: 2
-        x: 224
-        y: 0
-        width: 96
-        height: 96
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c4bd5c5ab6f65f04dba8a5e3503a6ed5
-      internalID: 786130427
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: scrollsandblocks_4
-      rect:
-        serializedVersion: 2
-        x: 192
-        y: 96
+        x: 193
+        y: 154
         width: 32
-        height: 32
+        height: 23
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -222,8 +134,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7d724a4f45fe0cd43bb402eeeb1caa67
-      internalID: -811210050
+      spriteID: 4c35b8acaca1da347b8e27ea1b07f0e6
+      internalID: -371874708
       vertices: []
       indices: 
       edges: []
@@ -242,6 +154,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
+      scrollsandblocks 1_0: -371874708
       scrollsandblocks_0: 1891798500667387940
       scrollsandblocks_1: -7389116511431112119
       scrollsandblocks_2: 6364697052581577472

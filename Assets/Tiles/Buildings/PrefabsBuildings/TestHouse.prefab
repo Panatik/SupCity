@@ -98,7 +98,6 @@ GameObject:
   - component: {fileID: 547971889539887270}
   - component: {fileID: 6665715737168841185}
   - component: {fileID: -5161110767559178671}
-  - component: {fileID: -8598283242767012844}
   - component: {fileID: 1485647131193118960}
   m_Layer: 3
   m_Name: TestHouse
@@ -193,19 +192,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   size: {x: 2, y: 2}
   objectIndex: 0
---- !u!114 &-8598283242767012844
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6703591653845088059}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e68ec69f8a150624b85caf6f1773497b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  house_level: 2
 --- !u!114 &1485647131193118960
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -218,7 +204,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f3ec9cc1cc14e24280762157bc53534, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  houseLevel: 2
   maxOccupants: 2
+  house: {fileID: 21300000, guid: e401cd3c614ef484ba4ea410a90fd655, type: 3}
+  houseName: Shelter
+  description: Simple roof over someone's head.
 --- !u!1 &6920633263533068279
 GameObject:
   m_ObjectHideFlags: 0
@@ -229,6 +219,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6503860721798463927}
   - component: {fileID: 8073805139815988268}
+  - component: {fileID: 8754891409068512813}
   m_Layer: 3
   m_Name: BoxCollider
   m_TagString: Buildings
@@ -297,3 +288,15 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 2, y: 2}
   m_EdgeRadius: 0
+--- !u!114 &8754891409068512813
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6920633263533068279}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd4ae78f6c0f8bc498db86db9107e4c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
