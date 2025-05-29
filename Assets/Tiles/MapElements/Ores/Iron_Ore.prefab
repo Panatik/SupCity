@@ -26,7 +26,7 @@ Transform:
   m_GameObject: {fileID: 3089786045598944717}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.5, y: 0.5, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 7, y: 7, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -113,7 +113,7 @@ Transform:
   m_GameObject: {fileID: 4505891703962020639}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.5, y: 0.5, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -175,6 +175,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3103303616147520855}
   - component: {fileID: 3978670313898545894}
+  - component: {fileID: 7340670320523819553}
   m_Layer: 3
   m_Name: Iron_Ore
   m_TagString: Buildings
@@ -213,3 +214,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   harvest_amount: 1
   resource_name: iron
+--- !u!114 &7340670320523819553
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8872550674766633954}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13563b0e5cff11b49ab0a16180733b98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  size: {x: 1, y: 1}
+  objectIndex: 0

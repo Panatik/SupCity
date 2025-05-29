@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 using UnityEngine.EventSystems;
+using Unity.VisualScripting;
 
 public class TilePlacerUi : MonoBehaviour
 {
@@ -81,7 +82,7 @@ public class TilePlacerUi : MonoBehaviour
             MakePreview(currentPreview);
 
             // Définis la taille automatiquement (ajuste selon ta logique ou un tableau)
-            currentObjectSize = (selectedObject.name.Contains("Road")) ? ObjectSize.OneByOne : ObjectSize.TwoByTwo;
+            currentObjectSize = (selectedObject.name.Contains("Road")) || (selectedObject.GetComponent<PlaceableObject>().size.Equals(new Vector2Int(1, 1))) ? ObjectSize.OneByOne : ObjectSize.TwoByTwo;
         }
     }
 
@@ -158,7 +159,7 @@ public class TilePlacerUi : MonoBehaviour
     {
         Vector3Int cell = targetTilemap.WorldToCell(pos);
         float cellSize = targetTilemap.cellSize.x;
-
+        
         if (currentObjectSize == ObjectSize.OneByOne)
         {
             // Route : centré sur une case

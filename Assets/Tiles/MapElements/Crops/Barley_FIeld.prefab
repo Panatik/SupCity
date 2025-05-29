@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2039574366793479640}
   - component: {fileID: 2928209123807756054}
   - component: {fileID: -4431021392155668802}
+  - component: {fileID: 1016198731862558411}
   m_Layer: 3
   m_Name: Barley_FIeld
   m_TagString: Buildings
@@ -69,6 +70,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   size: {x: 1, y: 1}
   objectIndex: 0
+--- !u!114 &1016198731862558411
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8260074265636318}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13563b0e5cff11b49ab0a16180733b98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  size: {x: 1, y: 1}
+  objectIndex: 0
 --- !u!1 &4437241368275825605
 GameObject:
   m_ObjectHideFlags: 0
@@ -95,7 +110,7 @@ Transform:
   m_GameObject: {fileID: 4437241368275825605}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.5, y: 0.5, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 6, y: 6, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -182,7 +197,7 @@ Transform:
   m_GameObject: {fileID: 7088145849124314690}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.5, y: 0.5, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children: []

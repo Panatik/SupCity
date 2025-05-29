@@ -26,7 +26,7 @@ Transform:
   m_GameObject: {fileID: 5194422254082427791}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.5, y: 0.5, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -104,7 +104,7 @@ Transform:
   m_GameObject: {fileID: 6171921745496820274}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.5, y: 0.5, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 4, y: 4, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -175,6 +175,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8074932587030704923}
   - component: {fileID: 4342395400227900708}
+  - component: {fileID: 1112703144571233638}
   m_Layer: 3
   m_Name: Bush
   m_TagString: Buildings
@@ -223,3 +224,17 @@ MonoBehaviour:
   - {fileID: -1312994402987499043, guid: c7357aa5ad8ed5a4eaa08c3bfe9b0708, type: 3}
   - {fileID: 8575179032478902733, guid: c7357aa5ad8ed5a4eaa08c3bfe9b0708, type: 3}
   tick_logic: {fileID: 0}
+--- !u!114 &1112703144571233638
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7386912777107873162}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13563b0e5cff11b49ab0a16180733b98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  size: {x: 1, y: 1}
+  objectIndex: 0

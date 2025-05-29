@@ -26,7 +26,7 @@ Transform:
   m_GameObject: {fileID: 341688423057156710}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.5, y: 0.5, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -104,7 +104,7 @@ Transform:
   m_GameObject: {fileID: 7241756795415173763}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.5, y: 0.5, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 8, y: 8, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -175,6 +175,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3293259231461152433}
   - component: {fileID: 6361371203831662017}
+  - component: {fileID: 1531553126182490048}
   m_Layer: 3
   m_Name: Grain_Field
   m_TagString: Buildings
@@ -219,3 +220,17 @@ MonoBehaviour:
   - {fileID: 2447717276745128951, guid: 321b18b192ba58c47b5c40bcc67b171a, type: 3}
   - {fileID: -7124156328152321891, guid: 321b18b192ba58c47b5c40bcc67b171a, type: 3}
   tick_controller: {fileID: 0}
+--- !u!114 &1531553126182490048
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7812586626722463821}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13563b0e5cff11b49ab0a16180733b98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  size: {x: 1, y: 1}
+  objectIndex: 0

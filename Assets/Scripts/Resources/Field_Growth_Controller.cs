@@ -33,7 +33,6 @@ public class Field_Growth_Controller : Harvestable_Controller {
     {
         tick_stamp = tick_controller.get_tick();
         grow_state++;
-        print(grow_state); 
         GetComponentInChildren<SpriteRenderer>().sprite = sprites[grow_state];
         if (grow_state == sprites.Length - 1)
         {

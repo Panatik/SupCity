@@ -26,7 +26,7 @@ Transform:
   m_GameObject: {fileID: 15518297260564668}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.5, y: 0.5, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 8, y: 8, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -97,6 +97,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1044607187525372081}
   - component: {fileID: 1420581132432865604}
+  - component: {fileID: 7233786263722380467}
   m_Layer: 3
   m_Name: Hops_Field
   m_TagString: Buildings
@@ -141,6 +142,20 @@ MonoBehaviour:
   - {fileID: 6299992369424546210, guid: 321b18b192ba58c47b5c40bcc67b171a, type: 3}
   - {fileID: -8186859060342957426, guid: 321b18b192ba58c47b5c40bcc67b171a, type: 3}
   tick_controller: {fileID: 0}
+--- !u!114 &7233786263722380467
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1988363632576146586}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13563b0e5cff11b49ab0a16180733b98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  size: {x: 1, y: 1}
+  objectIndex: 0
 --- !u!1 &4433838982117177059
 GameObject:
   m_ObjectHideFlags: 0
@@ -167,7 +182,7 @@ Transform:
   m_GameObject: {fileID: 4433838982117177059}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.5, y: 0.5, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

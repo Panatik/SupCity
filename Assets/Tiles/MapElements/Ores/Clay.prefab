@@ -26,7 +26,7 @@ Transform:
   m_GameObject: {fileID: 953131383457853910}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.5, y: 0.5, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -88,6 +88,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5168119110383882020}
   - component: {fileID: 2249401885567854645}
+  - component: {fileID: 4995584085839121515}
   m_Layer: 3
   m_Name: Clay
   m_TagString: Buildings
@@ -126,6 +127,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   harvest_amount: 1
   resource_name: clay
+--- !u!114 &4995584085839121515
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2157408905281398348}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13563b0e5cff11b49ab0a16180733b98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  size: {x: 1, y: 1}
+  objectIndex: 0
 --- !u!1 &2875032612965289318
 GameObject:
   m_ObjectHideFlags: 0
@@ -152,7 +167,7 @@ Transform:
   m_GameObject: {fileID: 2875032612965289318}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.5, y: 0.5, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 7, y: 7, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
