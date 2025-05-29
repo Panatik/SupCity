@@ -101,7 +101,6 @@ public class RandomWalkerGenerator : MonoBehaviour
                 }
             }
 
-            //Walker Methods
             ChanceToRemove();
             ChanceToRedirect();
             ChanceToCreate();

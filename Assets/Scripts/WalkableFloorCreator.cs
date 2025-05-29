@@ -78,13 +78,10 @@ public class WalkableFloorCreator : MonoBehaviour
             {
                 if (grid[x, y] == Grid.Floor)
                 {
-                    // Convertir les coordonn�es internes (grid) en coordonn�es tilemap
                     Vector3Int cellPos = new Vector3Int(x + tilemapOrigin.x, y + tilemapOrigin.y, 0);
 
-                    // Obtenir la position exacte dans le monde
                     Vector3 worldPos = floorMap.GetCellCenterWorld(cellPos);
 
-                    // Cr�er un node � cette position
                     Node node = Instantiate(nodePrefab, worldPos, Quaternion.identity);
                     nodeList.Add(node);
                 }
@@ -110,7 +107,7 @@ public class WalkableFloorCreator : MonoBehaviour
 
     void CreateConnections()
     {
-        float maxDistance = 1.1f; // tol�rance pour les diagonales si tu veux (ou mets 1.01f pour 4 directions)
+        float maxDistance = 1.1f;
 
         for (int i = 0; i < nodeList.Count; i++)
         {
@@ -126,7 +123,6 @@ public class WalkableFloorCreator : MonoBehaviour
             }
         }
 
-        // Supprimer les Nodes isol�s
         nodeList.RemoveAll(node => node.connections.Count == 0);
 
         for(int i=0; i<20; i++)
@@ -155,7 +151,7 @@ public class WalkableFloorCreator : MonoBehaviour
 
         if (hit.collider != null && hit.collider.gameObject.CompareTag("Wall"))
         {
-            return true; // Un mur bloque le chemin
+            return true;
         }
 
         return false;
@@ -189,11 +185,9 @@ public class WalkableFloorCreator : MonoBehaviour
         //Node spawnNode = validSpawnNodes[154];
         Node spawnNode = validSpawnNodes[Random.Range(0, validSpawnNodes.Count)];
 
-        // Choisir un prefab aléatoire
         int index = Random.Range(0, npcPrefabs.Count);
         NPC_Controller chosenNPC = npcPrefabs[index];
 
-        // Instancier ce prefab
         NPC_Controller newNPC = Instantiate(chosenNPC, spawnNode.transform.position, Quaternion.identity);
         newNPC.currentNode = spawnNode;
 

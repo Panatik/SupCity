@@ -13,8 +13,13 @@ GameObject:
   - component: {fileID: 5523586922276465527}
 <<<<<<<< HEAD:Assets/Humans/Female/Woman.prefab
   - component: {fileID: 1835333876958400324}
+<<<<<<< HEAD
 ========
 >>>>>>>> 8634496 (implementation of humans with moving animation and hunger bar):Assets/Humans/Male/Woman.prefab
+=======
+  - component: {fileID: 4595220370461467059}
+  - component: {fileID: -4804815078620830597}
+>>>>>>> 1cb7f2f (quest interface implemented)
   m_Layer: 0
   m_Name: Woman
   m_TagString: Untagged
@@ -38,7 +43,8 @@ Transform:
 >>>>>>>> 8634496 (implementation of humans with moving animation and hunger bar):Assets/Humans/Male/Woman.prefab
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 919124103933675318}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &5791157460383294551
@@ -137,6 +143,7 @@ MonoBehaviour:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1568319584691381255}
   m_Enabled: 1
+<<<<<<< HEAD
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 94f4e9a83e4e6e9489ea63e9d32f8465, type: 2}
   m_CullingMode: 0
@@ -150,3 +157,170 @@ MonoBehaviour:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+=======
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 162e8aca79314864bb10aa0475a69f42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentNode: {fileID: 0}
+  path: []
+  speed: 0.5
+--- !u!114 &4595220370461467059
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1568319584691381255}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1fe4b0a341994104cbe91d24316ee20c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hungerBarPrefab: {fileID: 7417733524811877823, guid: 4681baa09b9cdd546a3306cd0533c8ee, type: 3}
+  maxHunger: 100
+--- !u!61 &-4804815078620830597
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1568319584691381255}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.53333336, y: 0.8}
+    newSize: {x: 0.53333336, y: 0.8}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 0.53333336, y: 0.8}
+  m_EdgeRadius: 0
+--- !u!1001 &2815677678327404176
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 4925716056359879487}
+    m_Modifications:
+    - target: {fileID: 3157631843810202022, guid: 4681baa09b9cdd546a3306cd0533c8ee, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3157631843810202022, guid: 4681baa09b9cdd546a3306cd0533c8ee, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3157631843810202022, guid: 4681baa09b9cdd546a3306cd0533c8ee, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3157631843810202022, guid: 4681baa09b9cdd546a3306cd0533c8ee, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.0149863
+      objectReference: {fileID: 0}
+    - target: {fileID: 3157631843810202022, guid: 4681baa09b9cdd546a3306cd0533c8ee, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 14.603015
+      objectReference: {fileID: 0}
+    - target: {fileID: 3157631843810202022, guid: 4681baa09b9cdd546a3306cd0533c8ee, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 5.979002
+      objectReference: {fileID: 0}
+    - target: {fileID: 3157631843810202022, guid: 4681baa09b9cdd546a3306cd0533c8ee, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3157631843810202022, guid: 4681baa09b9cdd546a3306cd0533c8ee, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3157631843810202022, guid: 4681baa09b9cdd546a3306cd0533c8ee, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3157631843810202022, guid: 4681baa09b9cdd546a3306cd0533c8ee, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3157631843810202022, guid: 4681baa09b9cdd546a3306cd0533c8ee, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3157631843810202022, guid: 4681baa09b9cdd546a3306cd0533c8ee, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3157631843810202022, guid: 4681baa09b9cdd546a3306cd0533c8ee, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3307077979356969719, guid: 4681baa09b9cdd546a3306cd0533c8ee, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3307077979356969719, guid: 4681baa09b9cdd546a3306cd0533c8ee, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3307077979356969719, guid: 4681baa09b9cdd546a3306cd0533c8ee, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4864368045913909414, guid: 4681baa09b9cdd546a3306cd0533c8ee, type: 3}
+      propertyPath: m_Value
+      value: 88.03797
+      objectReference: {fileID: 0}
+    - target: {fileID: 5583781227575784255, guid: 4681baa09b9cdd546a3306cd0533c8ee, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5583781227575784255, guid: 4681baa09b9cdd546a3306cd0533c8ee, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6846765906026483798, guid: 4681baa09b9cdd546a3306cd0533c8ee, type: 3}
+      propertyPath: m_Name
+      value: HungerBarUI
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 4681baa09b9cdd546a3306cd0533c8ee, type: 3}
+--- !u!4 &919124103933675318 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3157631843810202022, guid: 4681baa09b9cdd546a3306cd0533c8ee, type: 3}
+  m_PrefabInstance: {fileID: 2815677678327404176}
+  m_PrefabAsset: {fileID: 0}
+>>>>>>> 1cb7f2f (quest interface implemented)

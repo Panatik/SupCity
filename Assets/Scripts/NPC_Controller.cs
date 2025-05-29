@@ -55,7 +55,8 @@ public class NPC_Controller : MonoBehaviour
             Vector3 targetPos = new Vector3(path[x].transform.position.x, path[x].transform.position.y, -2);
             Vector3 direction = (targetPos - transform.position).normalized;
 
-            transform.position = Vector3.MoveTowards(transform.position, targetPos, 3 * Time.deltaTime);
+            transform.position = Vector3.MoveTowards(transform.position, targetPos, speed * Time.deltaTime);
+
 
             if (Mathf.Abs(direction.x) > Mathf.Abs(direction.y))
             {
