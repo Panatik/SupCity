@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class Harvestable_Controller : MonoBehaviour
 {
-    protected bool is_harvestable = true;
+    protected bool is_harvestable = false;
     [SerializeField] protected int harvest_amount = 1;
     [SerializeField] protected string resource_name;
 

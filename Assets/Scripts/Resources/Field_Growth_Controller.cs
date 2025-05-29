@@ -24,7 +24,7 @@ public class Field_Growth_Controller : Harvestable_Controller {
             return;
         }
         int curr_tick = tick_controller.get_tick();
-        if (curr_tick > tick_stamp + GROW_TIME/sprites.Length)
+        if (curr_tick > tick_stamp + 200/sprites.Length)
         {
             grow_field();
         }
@@ -33,7 +33,8 @@ public class Field_Growth_Controller : Harvestable_Controller {
     {
         tick_stamp = tick_controller.get_tick();
         grow_state++;
-        GetComponent<SpriteRenderer>().sprite = sprites[grow_state];
+        print(grow_state); 
+        GetComponentInChildren<SpriteRenderer>().sprite = sprites[grow_state];
         if (grow_state == sprites.Length - 1)
         {
             is_harvestable = true;
@@ -43,7 +44,7 @@ public class Field_Growth_Controller : Harvestable_Controller {
     public void harvest_field()
     {
         is_harvestable = false;
-        GetComponent<SpriteRenderer>().sprite = sprites[0];
+        GetComponentInChildren<SpriteRenderer>().sprite = sprites[0];
         tick_stamp = tick_controller.get_tick();
     }
     [ContextMenu("Harvest field !")]

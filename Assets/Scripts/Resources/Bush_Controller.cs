@@ -34,12 +34,12 @@ public class Bush_Controller : Harvestable_Controller {
     {
         is_harvestable = true;
         int spr_num = Random.Range(0, 3);
-        GetComponent<SpriteRenderer>().sprite = hable_sprites[spr_num];
+        GetComponentInChildren<SpriteRenderer>().sprite = hable_sprites[spr_num];
     }
     public void harvest_bush()
     {
         is_harvestable = false;
-        GetComponent<SpriteRenderer>().sprite = empty_sprite;
+        GetComponentInChildren<SpriteRenderer>().sprite = empty_sprite;
         tick_stamp = tick_logic.get_tick();
     }
     [ContextMenu("Harvest bush !")]

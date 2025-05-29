@@ -31,12 +31,12 @@ public class Tree_Controller : Harvestable_Controller {
     public void grow_tree()
     {
         is_harvestable = true;
-        GetComponent<SpriteRenderer>().sprite = tree_spr;
+        GetComponentInChildren<SpriteRenderer>().sprite = tree_spr;
     }
     public void cut_tree()
     {
         is_harvestable = false;
-        GetComponent<SpriteRenderer>().sprite = trunk_spr;
+        GetComponentInChildren<SpriteRenderer>().sprite = trunk_spr;
         tick_stamp = tick_logic.get_tick();
     }
     [ContextMenu("Cut tree !")]

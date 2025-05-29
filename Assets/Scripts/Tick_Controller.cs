@@ -7,7 +7,7 @@ public class Tick_Controller : MonoBehaviour
 {
     private int current_tick = 0;
     private float curr_time;
-    private int tick_multiplier = 1;
+    [SerializeField] private int tick_multiplier = 10;
 
     void Start()
     {
