@@ -177,7 +177,7 @@ GameObject:
   - component: {fileID: 1180852343148992593}
   - component: {fileID: 9109411103302816093}
   m_Layer: 3
-  m_Name: Sand
+  m_Name: Sand_Ore
   m_TagString: Buildings
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

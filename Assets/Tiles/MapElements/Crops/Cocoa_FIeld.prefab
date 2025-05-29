@@ -90,7 +90,7 @@ GameObject:
   - component: {fileID: 3640434008529389314}
   - component: {fileID: 7441667668356921498}
   m_Layer: 3
-  m_Name: Cocoa_FIeld
+  m_Name: Cocoa_Field
   m_TagString: Buildings
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

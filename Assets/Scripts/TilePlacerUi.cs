@@ -212,9 +212,24 @@ public class TilePlacerUi : MonoBehaviour
 
             // Vérifie s'il y a déjà un objet route à cet endroit
             Collider2D hit = Physics2D.OverlapPoint(snappedWorldPos, LayerMask.GetMask("Buildings"));
-            if (hit != null && hit.CompareTag("Route"))
+            if (hit != null)
             {
+                if (hit.CompareTag(selectedObject.tag)) {
+                    return;
+                }
+                string terrain_type = hit.GetComponentInParent<PlaceableObject>().name;
+                string object_type = selectedObject.name;
+                bool is_dirt_unplaceable = terrain_type.StartsWith("Dirt") && !object_type.EndsWith("Field");
+                bool is_on_limestone = terrain_type.StartsWith("LimeStone");
+                bool is_stone_unplaceable = terrain_type.StartsWith("Stone") && !object_type.EndsWith("Ore");
+                print(is_on_limestone);
+                if (is_dirt_unplaceable || is_on_limestone || is_stone_unplaceable) {
+                    return;
+                }
                 // On a déjà une route ici
+            }
+            if (hit == null && (selectedObject.name.EndsWith("Field") || selectedObject.name.EndsWith("Ore"))) {
+                // if crops or ore resource placed on grass
                 return;
             }
         }

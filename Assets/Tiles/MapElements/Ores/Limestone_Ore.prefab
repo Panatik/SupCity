@@ -90,7 +90,7 @@ GameObject:
   - component: {fileID: 4016698227482699010}
   - component: {fileID: 3443619605649231013}
   m_Layer: 3
-  m_Name: Limestone
+  m_Name: Limestone_Ore
   m_TagString: Buildings
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: -4431021392155668802}
   - component: {fileID: 1016198731862558411}
   m_Layer: 3
-  m_Name: Barley_FIeld
+  m_Name: Barley_Field
   m_TagString: Buildings
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
