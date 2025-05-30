@@ -129,6 +129,7 @@ public class QuestLoader : MonoBehaviour
         };
 
         foreach (var quest in allQuests)
-            QuestManager.Instance.AddQuest(quest);
+            QuestManager.Instance.allQuests.Add(quest);
+        QuestManager.Instance.ShowNextQuests();
     }
 }

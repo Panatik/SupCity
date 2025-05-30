@@ -13,6 +13,7 @@ GameObject:
 <<<<<<< HEAD
 <<<<<<<< HEAD:Assets/PNJ/Circle.prefab
   - component: {fileID: 1835333876958400324}
+<<<<<<< HEAD
   - component: {fileID: 2233252671271537925}
 ========
   - component: {fileID: 5523586922276465527}
@@ -27,6 +28,10 @@ GameObject:
 =======
   - component: {fileID: 1835333876958400324}
 >>>>>>> 12864cc (updates humans : humans spawn):Assets/Humans/Male/man.prefab
+=======
+  - component: {fileID: 2625563733028717752}
+  - component: {fileID: -7502070025011656941}
+>>>>>>> e540166 (add pause/play logics)
   m_Layer: 0
   m_Name: man
   m_TagString: Untagged
@@ -227,4 +232,68 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentNode: {fileID: 0}
   path: []
+<<<<<<< HEAD
 >>>>>>> 12864cc (updates humans : humans spawn):Assets/Humans/Male/man.prefab
+=======
+  speed: 1
+--- !u!61 &2625563733028717752
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1568319584691381255}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.53333336, y: 0.8}
+    newSize: {x: 0.53333336, y: 0.8}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 0.53333336, y: 0.8}
+  m_EdgeRadius: 0
+--- !u!114 &-7502070025011656941
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1568319584691381255}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1fe4b0a341994104cbe91d24316ee20c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hungerBarPrefab: {fileID: 7417733524811877823, guid: 4681baa09b9cdd546a3306cd0533c8ee, type: 3}
+  maxHunger: 100
+>>>>>>> e540166 (add pause/play logics)
