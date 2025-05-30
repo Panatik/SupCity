@@ -3,6 +3,10 @@ using UnityEngine;
 
 public class Ore_Controller : Harvestable_Controller {
 
+    public void Start() {
+        is_harvestable = true;
+    }
+
     [ContextMenu("Harvest ore !")]
     public override Dictionary<string, int> harvest() {
         return base.harvest();

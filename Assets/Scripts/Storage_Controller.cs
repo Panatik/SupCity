@@ -9,10 +9,7 @@ public class Storage_Controller : MonoBehaviour {
     void Start()
     {
         foreach (var resource_name in storable_resources) {
-            Resource resource = new Resource(); 
-            resource.set_name(resource_name);
-            resource.set_capacity(storage_capacity);
-            resources.Add(resource_name, resource);
+            resources.Add(resource_name, new Resource(resource_name, storage_capacity));
         }
     }
 

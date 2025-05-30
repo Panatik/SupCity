@@ -3,13 +3,11 @@ using UnityEngine;
 public class Resource
 {
     private int quantity = 0;
-    private int capacity = 0;
+    private int capacity;
     private string name;
-
-    public void set_name(string n) {
+    
+    public Resource(string n, int c) {
         name = n;
-    }
-    public void set_capacity(int c) {
         capacity = c;
     }
 
