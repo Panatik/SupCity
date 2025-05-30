@@ -1,0 +1,975 @@
+fileFormatVersion: 2
+guid: 17b8e9a45bcc4074c80c7e0fbd504b2e
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -3972201276048561012
+    second: SAMPLE - Pixel Gnome Crop Pack - All_0
+  - first:
+      213: -7930248894731741273
+    second: SAMPLE - Pixel Gnome Crop Pack - All_1
+  - first:
+      213: 1509437777407002374
+    second: SAMPLE - Pixel Gnome Crop Pack - All_2
+  - first:
+      213: 6883444327376293364
+    second: SAMPLE - Pixel Gnome Crop Pack - All_3
+  - first:
+      213: -8961606977399529104
+    second: SAMPLE - Pixel Gnome Crop Pack - All_4
+  - first:
+      213: 7368306616780354055
+    second: SAMPLE - Pixel Gnome Crop Pack - All_5
+  - first:
+      213: 1331402893919131969
+    second: SAMPLE - Pixel Gnome Crop Pack - All_6
+  - first:
+      213: 1744683819242999773
+    second: SAMPLE - Pixel Gnome Crop Pack - All_7
+  - first:
+      213: 3940648965644588689
+    second: SAMPLE - Pixel Gnome Crop Pack - All_8
+  - first:
+      213: -2951745947471770776
+    second: SAMPLE - Pixel Gnome Crop Pack - All_9
+  - first:
+      213: -4249994314895456765
+    second: SAMPLE - Pixel Gnome Crop Pack - All_10
+  - first:
+      213: 5679406924721479067
+    second: SAMPLE - Pixel Gnome Crop Pack - All_11
+  - first:
+      213: -2885202418304940268
+    second: SAMPLE - Pixel Gnome Crop Pack - All_12
+  - first:
+      213: 2465846724993958518
+    second: SAMPLE - Pixel Gnome Crop Pack - All_13
+  - first:
+      213: -4680911562494962754
+    second: SAMPLE - Pixel Gnome Crop Pack - All_14
+  - first:
+      213: -1936113035732913186
+    second: SAMPLE - Pixel Gnome Crop Pack - All_15
+  - first:
+      213: 112656262768476661
+    second: SAMPLE - Pixel Gnome Crop Pack - All_16
+  - first:
+      213: 1073108234886089434
+    second: SAMPLE - Pixel Gnome Crop Pack - All_17
+  - first:
+      213: 2772086971960419033
+    second: SAMPLE - Pixel Gnome Crop Pack - All_18
+  - first:
+      213: -1029375849119232161
+    second: SAMPLE - Pixel Gnome Crop Pack - All_19
+  - first:
+      213: 5313025075726859380
+    second: SAMPLE - Pixel Gnome Crop Pack - All_20
+  - first:
+      213: 2767462853691039208
+    second: SAMPLE - Pixel Gnome Crop Pack - All_21
+  - first:
+      213: -9137543789025965899
+    second: SAMPLE - Pixel Gnome Crop Pack - All_22
+  - first:
+      213: 3177620841518326329
+    second: SAMPLE - Pixel Gnome Crop Pack - All_23
+  - first:
+      213: -3517420248569686626
+    second: SAMPLE - Pixel Gnome Crop Pack - All_24
+  - first:
+      213: 7997887511192831227
+    second: SAMPLE - Pixel Gnome Crop Pack - All_25
+  - first:
+      213: 8942467435283784924
+    second: SAMPLE - Pixel Gnome Crop Pack - All_26
+  - first:
+      213: 1274793263249458363
+    second: SAMPLE - Pixel Gnome Crop Pack - All_27
+  - first:
+      213: -4333165683866976510
+    second: SAMPLE - Pixel Gnome Crop Pack - All_28
+  - first:
+      213: -914710660074599408
+    second: SAMPLE - Pixel Gnome Crop Pack - All_29
+  - first:
+      213: 6110576855957215964
+    second: SAMPLE - Pixel Gnome Crop Pack - All_30
+  - first:
+      213: 6345217456848710305
+    second: SAMPLE - Pixel Gnome Crop Pack - All_31
+  - first:
+      213: 1108096060798816085
+    second: SAMPLE - Pixel Gnome Crop Pack - All_32
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: SAMPLE - Pixel Gnome Crop Pack - All_0
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 134
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c8ca5cc2cf7efd8c0800000000000000
+      internalID: -3972201276048561012
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SAMPLE - Pixel Gnome Crop Pack - All_1
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 130
+        width: 7
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7a7941185a812f190800000000000000
+      internalID: -7930248894731741273
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SAMPLE - Pixel Gnome Crop Pack - All_2
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 132
+        width: 13
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 60746e449a992f410800000000000000
+      internalID: 1509437777407002374
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SAMPLE - Pixel Gnome Crop Pack - All_3
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 131
+        width: 15
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4fd017c4528e68f50800000000000000
+      internalID: 6883444327376293364
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SAMPLE - Pixel Gnome Crop Pack - All_4
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 131
+        width: 15
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 07160774fe9f1a380800000000000000
+      internalID: -8961606977399529104
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SAMPLE - Pixel Gnome Crop Pack - All_5
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 131
+        width: 14
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7027a5934db714660800000000000000
+      internalID: 7368306616780354055
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SAMPLE - Pixel Gnome Crop Pack - All_6
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 127
+        width: 18
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1491af0c0e71a7210800000000000000
+      internalID: 1331402893919131969
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SAMPLE - Pixel Gnome Crop Pack - All_7
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 127
+        width: 16
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ddfc95b90bc563810800000000000000
+      internalID: 1744683819242999773
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SAMPLE - Pixel Gnome Crop Pack - All_8
+      rect:
+        serializedVersion: 2
+        x: 125
+        y: 130
+        width: 22
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 19691c51b5fffa630800000000000000
+      internalID: 3940648965644588689
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SAMPLE - Pixel Gnome Crop Pack - All_9
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 98
+        width: 28
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 86b0fb523ba4907d0800000000000000
+      internalID: -2951745947471770776
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SAMPLE - Pixel Gnome Crop Pack - All_10
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 98
+        width: 34
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3060a3320bcf405c0800000000000000
+      internalID: -4249994314895456765
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SAMPLE - Pixel Gnome Crop Pack - All_11
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 98
+        width: 17
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b9ddaead18e41de40800000000000000
+      internalID: 5679406924721479067
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SAMPLE - Pixel Gnome Crop Pack - All_12
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 95
+        width: 17
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 41706dfdfa3b5f7d0800000000000000
+      internalID: -2885202418304940268
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SAMPLE - Pixel Gnome Crop Pack - All_13
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 95
+        width: 16
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 67243d12882783220800000000000000
+      internalID: 2465846724993958518
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SAMPLE - Pixel Gnome Crop Pack - All_14
+      rect:
+        serializedVersion: 2
+        x: 125
+        y: 98
+        width: 22
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eb318740cbf0a0fb0800000000000000
+      internalID: -4680911562494962754
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SAMPLE - Pixel Gnome Crop Pack - All_15
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 72
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ed3f224b37b8125e0800000000000000
+      internalID: -1936113035732913186
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SAMPLE - Pixel Gnome Crop Pack - All_16
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 65
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5f1c90c264c309100800000000000000
+      internalID: 112656262768476661
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SAMPLE - Pixel Gnome Crop Pack - All_17
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 69
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ada8ee9014274ee00800000000000000
+      internalID: 1073108234886089434
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SAMPLE - Pixel Gnome Crop Pack - All_18
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 67
+        width: 13
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9d26032f96e687620800000000000000
+      internalID: 2772086971960419033
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SAMPLE - Pixel Gnome Crop Pack - All_19
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 63
+        width: 65
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f5fc1ec7e1ce6b1f0800000000000000
+      internalID: -1029375849119232161
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SAMPLE - Pixel Gnome Crop Pack - All_20
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 63
+        width: 16
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 47c31712828abb940800000000000000
+      internalID: 5313025075726859380
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SAMPLE - Pixel Gnome Crop Pack - All_21
+      rect:
+        serializedVersion: 2
+        x: 125
+        y: 66
+        width: 22
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8edd7538dc0086620800000000000000
+      internalID: 2767462853691039208
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SAMPLE - Pixel Gnome Crop Pack - All_22
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 38
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5b8c78f265ce03180800000000000000
+      internalID: -9137543789025965899
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SAMPLE - Pixel Gnome Crop Pack - All_23
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 34
+        width: 7
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 932e391d15d291c20800000000000000
+      internalID: 3177620841518326329
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SAMPLE - Pixel Gnome Crop Pack - All_24
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 36
+        width: 11
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e95dc368bec9f2fc0800000000000000
+      internalID: -3517420248569686626
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SAMPLE - Pixel Gnome Crop Pack - All_25
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 35
+        width: 14
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bf48e2a11543efe60800000000000000
+      internalID: 7997887511192831227
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SAMPLE - Pixel Gnome Crop Pack - All_26
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 35
+        width: 15
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cd4a69fc0c60a1c70800000000000000
+      internalID: 8942467435283784924
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SAMPLE - Pixel Gnome Crop Pack - All_27
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 35
+        width: 15
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bb48b0208b9f0b110800000000000000
+      internalID: 1274793263249458363
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SAMPLE - Pixel Gnome Crop Pack - All_28
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 32
+        width: 18
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 20f3234c4c08dd3c0800000000000000
+      internalID: -4333165683866976510
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SAMPLE - Pixel Gnome Crop Pack - All_29
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 31
+        width: 16
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 01c8df1408b4e43f0800000000000000
+      internalID: -914710660074599408
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SAMPLE - Pixel Gnome Crop Pack - All_30
+      rect:
+        serializedVersion: 2
+        x: 125
+        y: 34
+        width: 22
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cda9d0876412dc450800000000000000
+      internalID: 6110576855957215964
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SAMPLE - Pixel Gnome Crop Pack - All_31
+      rect:
+        serializedVersion: 2
+        x: 95
+        y: 0
+        width: 18
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1aa231a98adbe0850800000000000000
+      internalID: 6345217456848710305
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SAMPLE - Pixel Gnome Crop Pack - All_32
+      rect:
+        serializedVersion: 2
+        x: 125
+        y: 2
+        width: 22
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 55f4ce01f7fb06f00800000000000000
+      internalID: 1108096060798816085
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      SAMPLE - Pixel Gnome Crop Pack - All_0: -3972201276048561012
+      SAMPLE - Pixel Gnome Crop Pack - All_1: -7930248894731741273
+      SAMPLE - Pixel Gnome Crop Pack - All_10: -4249994314895456765
+      SAMPLE - Pixel Gnome Crop Pack - All_11: 5679406924721479067
+      SAMPLE - Pixel Gnome Crop Pack - All_12: -2885202418304940268
+      SAMPLE - Pixel Gnome Crop Pack - All_13: 2465846724993958518
+      SAMPLE - Pixel Gnome Crop Pack - All_14: -4680911562494962754
+      SAMPLE - Pixel Gnome Crop Pack - All_15: -1936113035732913186
+      SAMPLE - Pixel Gnome Crop Pack - All_16: 112656262768476661
+      SAMPLE - Pixel Gnome Crop Pack - All_17: 1073108234886089434
+      SAMPLE - Pixel Gnome Crop Pack - All_18: 2772086971960419033
+      SAMPLE - Pixel Gnome Crop Pack - All_19: -1029375849119232161
+      SAMPLE - Pixel Gnome Crop Pack - All_2: 1509437777407002374
+      SAMPLE - Pixel Gnome Crop Pack - All_20: 5313025075726859380
+      SAMPLE - Pixel Gnome Crop Pack - All_21: 2767462853691039208
+      SAMPLE - Pixel Gnome Crop Pack - All_22: -9137543789025965899
+      SAMPLE - Pixel Gnome Crop Pack - All_23: 3177620841518326329
+      SAMPLE - Pixel Gnome Crop Pack - All_24: -3517420248569686626
+      SAMPLE - Pixel Gnome Crop Pack - All_25: 7997887511192831227
+      SAMPLE - Pixel Gnome Crop Pack - All_26: 8942467435283784924
+      SAMPLE - Pixel Gnome Crop Pack - All_27: 1274793263249458363
+      SAMPLE - Pixel Gnome Crop Pack - All_28: -4333165683866976510
+      SAMPLE - Pixel Gnome Crop Pack - All_29: -914710660074599408
+      SAMPLE - Pixel Gnome Crop Pack - All_3: 6883444327376293364
+      SAMPLE - Pixel Gnome Crop Pack - All_30: 6110576855957215964
+      SAMPLE - Pixel Gnome Crop Pack - All_31: 6345217456848710305
+      SAMPLE - Pixel Gnome Crop Pack - All_32: 1108096060798816085
+      SAMPLE - Pixel Gnome Crop Pack - All_4: -8961606977399529104
+      SAMPLE - Pixel Gnome Crop Pack - All_5: 7368306616780354055
+      SAMPLE - Pixel Gnome Crop Pack - All_6: 1331402893919131969
+      SAMPLE - Pixel Gnome Crop Pack - All_7: 1744683819242999773
+      SAMPLE - Pixel Gnome Crop Pack - All_8: 3940648965644588689
+      SAMPLE - Pixel Gnome Crop Pack - All_9: -2951745947471770776
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

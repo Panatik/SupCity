@@ -123,7 +123,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04faf86003b8e85499e9e36f1bb010c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 2
+  moveSpeed: 3
   currentPath: []
   currentNode: {fileID: 0}
   targetNode: {fileID: 0}
