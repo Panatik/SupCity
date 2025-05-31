@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: -4431021392155668802}
   - component: {fileID: 1016198731862558411}
   m_Layer: 3
-  m_Name: Barley_Field
+  m_Name: Barley_FIeld
   m_TagString: Buildings
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -51,10 +51,10 @@ MonoBehaviour:
   harvest_amount: 1
   resource_name: barley
   sprites:
-  - {fileID: -2951745947471770776, guid: 1701cc6d84a301e4282494c36496793d, type: 3}
-  - {fileID: -4249994314895456765, guid: 1701cc6d84a301e4282494c36496793d, type: 3}
-  - {fileID: -8961606977399529104, guid: 1701cc6d84a301e4282494c36496793d, type: 3}
-  - {fileID: 5679406924721479067, guid: 1701cc6d84a301e4282494c36496793d, type: 3}
+  - {fileID: -4249994314895456765, guid: 17b8e9a45bcc4074c80c7e0fbd504b2e, type: 3}
+  - {fileID: -4249994314895456765, guid: 17b8e9a45bcc4074c80c7e0fbd504b2e, type: 3}
+  - {fileID: 1705323207, guid: 17b8e9a45bcc4074c80c7e0fbd504b2e, type: 3}
+  - {fileID: 5679406924721479067, guid: 17b8e9a45bcc4074c80c7e0fbd504b2e, type: 3}
   tick_controller: {fileID: 0}
 --- !u!114 &-4431021392155668802
 MonoBehaviour:
@@ -160,12 +160,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2951745947471770776, guid: 1701cc6d84a301e4282494c36496793d, type: 3}
+  m_Sprite: {fileID: 1244313166, guid: 17b8e9a45bcc4074c80c7e0fbd504b2e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.17, y: 0.2}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1

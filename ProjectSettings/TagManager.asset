@@ -7,6 +7,7 @@ TagManager:
   - Wall
   - Route
   - Buildings
+  - Tick
   layers:
   - Default
   - TransparentFX

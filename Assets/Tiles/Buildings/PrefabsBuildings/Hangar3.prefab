@@ -98,6 +98,7 @@ GameObject:
   - component: {fileID: 547971889539887270}
   - component: {fileID: -5161110767559178671}
   - component: {fileID: -8598283242767012844}
+  - component: {fileID: 3965960193789111703}
   m_Layer: 3
   m_Name: Hangar3
   m_TagString: Buildings
@@ -149,6 +150,35 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   house_level: 2
+--- !u!114 &3965960193789111703
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6703591653845088059}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d2f42f90ba15b94fa274565659c8d10, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  storable_resources:
+  - berry
+  - wheat
+  - barley
+  - hops
+  - sugar_cane
+  - cocoa
+  - bread
+  - beer
+  - meat
+  - chocolate
+  - coffee
+  - fish
+  - water
+  - coffe_bean
+  storage_capacity: 1800
+  storage_priority: 1
 --- !u!1 &6920633263533068279
 GameObject:
   m_ObjectHideFlags: 0

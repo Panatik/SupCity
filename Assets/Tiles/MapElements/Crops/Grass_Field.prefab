@@ -76,12 +76,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 2383185621388321068, guid: 321b18b192ba58c47b5c40bcc67b171a, type: 3}
+  m_Sprite: {fileID: 2383185621388321068, guid: ed27d37848eae4f4d9a75dc6335f9369, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.12, y: 0.06}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -215,12 +215,12 @@ MonoBehaviour:
   harvest_amount: 1
   resource_name: grass
   sprites:
-  - {fileID: 2383185621388321068, guid: 321b18b192ba58c47b5c40bcc67b171a, type: 3}
-  - {fileID: 8281167024378096558, guid: 321b18b192ba58c47b5c40bcc67b171a, type: 3}
-  - {fileID: 4594382711787611745, guid: 321b18b192ba58c47b5c40bcc67b171a, type: 3}
-  - {fileID: -2007879195102778466, guid: 321b18b192ba58c47b5c40bcc67b171a, type: 3}
-  - {fileID: -4964467975926673830, guid: 321b18b192ba58c47b5c40bcc67b171a, type: 3}
-  - {fileID: -5810060871207019471, guid: 321b18b192ba58c47b5c40bcc67b171a, type: 3}
+  - {fileID: 2383185621388321068, guid: ed27d37848eae4f4d9a75dc6335f9369, type: 3}
+  - {fileID: 8281167024378096558, guid: ed27d37848eae4f4d9a75dc6335f9369, type: 3}
+  - {fileID: 4594382711787611745, guid: ed27d37848eae4f4d9a75dc6335f9369, type: 3}
+  - {fileID: -9085809090031716586, guid: ed27d37848eae4f4d9a75dc6335f9369, type: 3}
+  - {fileID: 3338495331230526703, guid: ed27d37848eae4f4d9a75dc6335f9369, type: 3}
+  - {fileID: -8302436923813310387, guid: ed27d37848eae4f4d9a75dc6335f9369, type: 3}
   tick_controller: {fileID: 0}
 --- !u!114 &-8714780583913140288
 MonoBehaviour:
