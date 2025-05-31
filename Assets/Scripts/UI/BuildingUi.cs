@@ -34,29 +34,29 @@ public class BuildingUI : MonoBehaviour
         ClearSection(sectionEntrants);
         ClearSection(sectionSortants);
 
-        // Ouvriers
-        foreach (var pnj in bat.GetOuvriers())
+        /*// Ouvriers
+        foreach (var pnj in bat.GetPNJ())
         {
             AjouterInfo(sectionOuvriers, pnj.nom, pnj.sprite);
         }
 
         // Outils
-        foreach (var outil in bat.GetOutilsUtilisés())
+        foreach (var outil in bat.GetTools())
         {
             AjouterInfo(sectionOutils, outil.nom, outil.sprite, outil.quantité);
         }
 
         // Ressources entrantes
-        foreach (var res in bat.GetRessourcesEntrantes())
+        foreach (var res in bat.GetRessourcesInput())
         {
             AjouterInfo(sectionEntrants, res.nom, res.sprite, res.quantité);
         }
 
         // Ressources sortantes
-        foreach (var res in bat.GetRessourcesSortantes())
+        foreach (var res in bat.GetRessourcesOutput())
         {
             AjouterInfo(sectionSortants, res.nom, res.sprite, res.quantité);
-        }
+        }*/
     }
 
     void ClearSection(Transform section)

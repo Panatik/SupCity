@@ -241,6 +241,22 @@ public class TilePlacerUi : MonoBehaviour
         {
             GameObject placed = Instantiate(selectedObject, snappedWorldPos, Quaternion.identity);
 
+            // Nouvelle route posée -> activer isRoute sur le node concerné
+            if (selectedObject.name.Contains("Road")) // ou utilise un tag si tu préfères
+            {
+                Collider2D nodeHit = Physics2D.OverlapPoint(snappedWorldPos, LayerMask.GetMask("Nodes"));
+                if (nodeHit != null)
+                {
+                    Node node = nodeHit.GetComponent<Node>();
+                    if (node != null)
+                    {
+                        node.isRoute = true;
+                        node.TrouverVoisins();
+                    }
+                }
+                //AStarManager.instance.RebuildAllConnections();
+            }
+
             if (selectedObject.CompareTag("Buildings"))
             {
                 selectedObject = null;
@@ -293,7 +309,16 @@ public class TilePlacerUi : MonoBehaviour
         if (hit)
         {
             GameObject building = hit.transform.root.gameObject;
+
             Destroy(building);
+
+            // MISE À JOUR DES NOEUDS
+            Node node = building.GetComponentInChildren<Node>();
+            if (node != null)
+            {
+                node.isRoute = false;
+                node.TrouverVoisins();
+            }
 
             if (housePlacer != null)
                 housePlacer.HandleHouseBlocking(null);
@@ -395,6 +420,33 @@ public class TilePlacerUi : MonoBehaviour
             Vector2 size = (currentObjectSize == ObjectSize.OneByOne)
                 ? new Vector2(cellSize, cellSize)
                 : new Vector2(2f * cellSize, 2f * cellSize);
+
+            if (draggedObject.name.Contains("Road"))
+            {
+                // Désactive ancien Node
+                Collider2D oldNodeHit = Physics2D.OverlapPoint(originalPosition, LayerMask.GetMask("Nodes"));
+                if (oldNodeHit != null)
+                {
+                    Node oldNode = oldNodeHit.GetComponent<Node>();
+                    if (oldNode != null)
+                    {
+                        oldNode.isRoute = false;
+                        oldNode.TrouverVoisins();
+                    }
+                }
+
+                // Active nouveau Node
+                Collider2D newNodeHit = Physics2D.OverlapPoint(worldPos, LayerMask.GetMask("Nodes"));
+                if (newNodeHit != null)
+                {
+                    Node newNode = newNodeHit.GetComponent<Node>();
+                    if (newNode != null)
+                    {
+                        newNode.isRoute = true;
+                        newNode.TrouverVoisins();
+                    }
+                }
+            }
 
             if (IsAreaClear(worldPos, size))
             {

@@ -17,6 +17,8 @@ public class PNJ : MonoBehaviour
     private float idleCheckTimer = 0f;
     private bool isIdle = false;
 
+    public Batiment assignedWork;
+
     // Pour savoir si le PNJ a été "forcé" de rentrer à la maison récemment
     private bool returningHomeByTimer = false;
     void Start()
@@ -332,6 +334,12 @@ public class PNJ : MonoBehaviour
         isIdle = false;
         returningHomeByTimer = false;
         PickRandomTargetAndGo();
+    }
+
+    public void AssignerTravail(Batiment batiment)
+    {
+        assignedWork = batiment;
+        batiment.AjouterOuvrier(this);
     }
 
     // Debug pour voir le chemin dans l'éditeur

@@ -66,7 +66,7 @@ public class AStarManager : MonoBehaviour
                 if (connectedNode == null)
                     continue;
 
-                if (connectedNode.IsBlocked && !(connectedNode == end && ignoreEndBlock))
+                if (connectedNode.IsBlocked && !connectedNode.isRoute && !(connectedNode == end && ignoreEndBlock))
                 {
                     continue;
                 }
@@ -100,7 +100,7 @@ public class AStarManager : MonoBehaviour
 
             foreach (Node other in allNodes)
             {
-                if (node == other || other.IsBlocked)
+                if (node == other || (other.IsBlocked && !other.isRoute))
                     continue;
 
                 Vector2 dir = other.transform.position - node.transform.position;

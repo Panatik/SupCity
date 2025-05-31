@@ -20,6 +20,9 @@ public class HousePlacer : MonoBehaviour
 
     public void HandleHouseBlocking(GameObject house)
     {
+        if (house == null)
+            return;
+
         // Nettoyage des anciens blocs s’il y avait une maison au même emplacement
         if (houseToBlockedNodes.ContainsKey(house))
         {
@@ -30,29 +33,27 @@ public class HousePlacer : MonoBehaviour
             houseToBlockedNodes.Remove(house);
         }
 
-        if (house != null)
+        Collider2D[] nodeHits = Physics2D.OverlapBoxAll(
+            house.transform.position,
+            house.GetComponentInChildren<BoxCollider2D>().size,
+            0f,
+            LayerMask.GetMask("Nodes")
+        );
+
+        List<Node> blockedNodes = new List<Node>();
+
+        foreach (Collider2D hit in nodeHits)
         {
-            Collider2D[] nodeHits = Physics2D.OverlapBoxAll(
-                house.transform.position,
-                house.GetComponentInChildren<BoxCollider2D>().size,
-                0f,
-                LayerMask.GetMask("Nodes")
-            );
-
-            List<Node> blockedNodes = new List<Node>();
-
-            foreach (Collider2D hit in nodeHits)
+            Node node = hit.GetComponent<Node>();
+            if (node != null)
             {
-                Node node = hit.GetComponent<Node>();
-                if (node != null)
-                {
-                    node.AddBlocker();
-                    blockedNodes.Add(node);
-                }
+                node.AddBlocker();
+                blockedNodes.Add(node);
             }
-
-            houseToBlockedNodes[house] = blockedNodes;
         }
+
+        houseToBlockedNodes[house] = blockedNodes;
+        
 
         foreach (var npc in FindObjectsByType<NPC_Controller>(FindObjectsSortMode.None))
         {

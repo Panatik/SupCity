@@ -97,7 +97,7 @@ GameObject:
   m_Component:
   - component: {fileID: 547971889539887270}
   - component: {fileID: -5161110767559178671}
-  - component: {fileID: -8598283242767012844}
+  - component: {fileID: 4912314660610445467}
   m_Layer: 3
   m_Name: BushWork
   m_TagString: Buildings
@@ -136,7 +136,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   size: {x: 2, y: 2}
   objectIndex: 0
---- !u!114 &-8598283242767012844
+--- !u!114 &4912314660610445467
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -145,10 +145,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 6703591653845088059}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e68ec69f8a150624b85caf6f1773497b, type: 3}
+  m_Script: {fileID: 11500000, guid: d69dda74ae83b124a8c90434b1213926, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  house_level: 2
+  nomBatiment: BushWork
+  maxOuvriers: 3
 --- !u!1 &6920633263533068279
 GameObject:
   m_ObjectHideFlags: 0
