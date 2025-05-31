@@ -1,6 +1,5 @@
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class NPC_Controller : MonoBehaviour
 {
@@ -16,7 +15,6 @@ public class NPC_Controller : MonoBehaviour
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
 
-        // Si currentNode n'est pas d�fini, on le d�tecte automatiquement
         if (currentNode == null)
         {
             Collider2D hit = Physics2D.OverlapPoint(transform.position, LayerMask.GetMask("Nodes"));
@@ -31,7 +29,6 @@ public class NPC_Controller : MonoBehaviour
             }
         }
 
-        // Trouve un target al�atoire pour commencer
         Node[] nodes = FindObjectsByType<Node>(FindObjectsSortMode.None);
         if (nodes.Length > 0)
         {
@@ -49,45 +46,19 @@ public class NPC_Controller : MonoBehaviour
     {
         if (path == null || path.Count == 0 || currentPathIndex >= path.Count)
             return;
-        if (path.Count > 0)
-        {
-            int x = 0;
-            Vector3 targetPos = new Vector3(path[x].transform.position.x, path[x].transform.position.y, -2);
-            Vector3 direction = (targetPos - transform.position).normalized;
-
-            transform.position = Vector3.MoveTowards(transform.position, targetPos, speed * Time.deltaTime);
-
-
-            if (Mathf.Abs(direction.x) > Mathf.Abs(direction.y))
-            {
-                if (direction.x > 0)
-                    spriteRenderer.flipX = true;
-                else if (direction.x < 0)
-                    spriteRenderer.flipX = false; 
-            }
-
-            transform.position = Vector3.MoveTowards(transform.position, targetPos, 3 * Time.deltaTime);
-
-            if (Mathf.Abs(direction.x) > Mathf.Abs(direction.y))
-            {
-                if (direction.x > 0)
-                    spriteRenderer.flipX = true;
-                else if (direction.x < 0)
-                    spriteRenderer.flipX = false; 
-            }
 
         Node nextNode = path[currentPathIndex];
         Vector3 targetPos = new Vector3(nextNode.transform.position.x, nextNode.transform.position.y, 0);
         transform.position = Vector3.MoveTowards(transform.position, targetPos, speed * Time.deltaTime);
 
         Vector3 direction = (targetPos - transform.position).normalized;
-        if (Mathf.Abs(direction.x) > Mathf.Abs(direction.y)) 
+        if (Mathf.Abs(direction.x) > Mathf.Abs(direction.y))
         {
             if (direction.x > 0)
             {
                 spriteRenderer.flipX = true;
             }
-            else if (direction.x < 0) 
+            else if (direction.x < 0)
             {
                 spriteRenderer.flipX = false;
             }
@@ -100,7 +71,6 @@ public class NPC_Controller : MonoBehaviour
 
             if (currentPathIndex >= path.Count)
             {
-                // Arriv� � destination : choisir une nouvelle destination
                 Node[] nodes = FindObjectsByType<Node>(FindObjectsSortMode.None);
                 if (nodes.Length > 1)
                 {
@@ -142,7 +112,7 @@ public class NPC_Controller : MonoBehaviour
 
     private void OnDrawGizmos()
     {
-        if (path != null && path.Count > 0)
+        if (path != null && path.Count > 1)
         {
             Gizmos.color = Color.blue;
             for (int i = 1; i < path.Count; i++)
@@ -151,5 +121,4 @@ public class NPC_Controller : MonoBehaviour
             }
         }
     }
-
 }

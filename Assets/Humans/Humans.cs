@@ -2,36 +2,24 @@
 
 public class Human : MonoBehaviour
 {
-    public HungerBar hungerBarPrefab;
-    private HungerBar hungerBarUI;
     private HumanNeeds needs;
 
     public float maxHunger = 100f;
+    public float maxThirst = 100f;
+    public float maxSleep = 100f;
 
     private void Start()
     {
-        var canvas = FindObjectOfType<Canvas>().transform;
-        hungerBarUI = Instantiate(hungerBarPrefab, canvas);
-
-        needs = new HumanNeeds(maxHunger);
-        hungerBarUI.SetNeeds(needs);
-        hungerBarUI.Hide();
+        needs = new HumanNeeds(maxHunger, maxThirst, maxSleep);
     }
 
     private void Update()
     {
-        needs.UpdateHunger(1f);
-        if (hungerBarUI.IsVisible())
-            hungerBarUI.UpdateUI();
+        needs.UpdateNeeds(1f, 1.5f, 0.5f);
     }
 
-    public void OnSelected()
+    public HumanNeeds GetNeeds()
     {
-        hungerBarUI.Show();
-    }
-
-    public void OnDeselected()
-    {
-        hungerBarUI.Hide();
+        return needs;
     }
 }

@@ -11,15 +11,9 @@ GameObject:
   - component: {fileID: 4925716056359879487}
   - component: {fileID: 5791157460383294551}
   - component: {fileID: 5523586922276465527}
-<<<<<<<< HEAD:Assets/Humans/Female/Woman.prefab
   - component: {fileID: 1835333876958400324}
-<<<<<<< HEAD
-========
->>>>>>>> 8634496 (implementation of humans with moving animation and hunger bar):Assets/Humans/Male/Woman.prefab
-=======
   - component: {fileID: 4595220370461467059}
   - component: {fileID: -4804815078620830597}
->>>>>>> 1cb7f2f (quest interface implemented)
   m_Layer: 0
   m_Name: Woman
   m_TagString: Untagged
@@ -36,11 +30,7 @@ Transform:
   m_GameObject: {fileID: 1568319584691381255}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-<<<<<<<< HEAD:Assets/Humans/Female/Woman.prefab
   m_LocalPosition: {x: 3.71, y: 0.13, z: 0}
-========
-  m_LocalPosition: {x: 0, y: 0, z: 0}
->>>>>>>> 8634496 (implementation of humans with moving animation and hunger bar):Assets/Humans/Male/Woman.prefab
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -91,20 +81,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-<<<<<<<< HEAD:Assets/Humans/Female/Woman.prefab
   m_Sprite: {fileID: -1275391637157308820, guid: 14476355d0a178d4a970642d1f5bcc0d, type: 3}
-========
-  m_Sprite: {fileID: -7715902427486114116, guid: a0390088591d7a944902d1c0a85c7bf3, type: 3}
->>>>>>>> 8634496 (implementation of humans with moving animation and hunger bar):Assets/Humans/Male/Woman.prefab
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-<<<<<<<< HEAD:Assets/Humans/Female/Woman.prefab
   m_Size: {x: 0.53333336, y: 0.8}
-========
-  m_Size: {x: 0.15, y: 0.37}
->>>>>>>> 8634496 (implementation of humans with moving animation and hunger bar):Assets/Humans/Male/Woman.prefab
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -113,7 +95,6 @@ SpriteRenderer:
 --- !u!95 &5523586922276465527
 Animator:
   serializedVersion: 7
-<<<<<<<< HEAD:Assets/Humans/Female/Woman.prefab
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -135,35 +116,19 @@ Animator:
   m_WriteDefaultValuesOnDisable: 0
 --- !u!114 &1835333876958400324
 MonoBehaviour:
-========
->>>>>>>> 8634496 (implementation of humans with moving animation and hunger bar):Assets/Humans/Male/Woman.prefab
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1568319584691381255}
   m_Enabled: 1
-<<<<<<< HEAD
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 94f4e9a83e4e6e9489ea63e9d32f8465, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_AnimatePhysics: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
-=======
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 162e8aca79314864bb10aa0475a69f42, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   currentNode: {fileID: 0}
   path: []
+  targetNode: {fileID: 0}
   speed: 0.5
 --- !u!114 &4595220370461467059
 MonoBehaviour:
@@ -177,8 +142,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1fe4b0a341994104cbe91d24316ee20c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hungerBarPrefab: {fileID: 7417733524811877823, guid: 4681baa09b9cdd546a3306cd0533c8ee, type: 3}
+  humanMenuPrefab: {fileID: 8152815056785113645, guid: d5dbd5bc716828c4c87902bf2e426c09, type: 3}
   maxHunger: 100
+  maxThirst: 100
+  maxSleep: 100
 --- !u!61 &-4804815078620830597
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -323,4 +290,3 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3157631843810202022, guid: 4681baa09b9cdd546a3306cd0533c8ee, type: 3}
   m_PrefabInstance: {fileID: 2815677678327404176}
   m_PrefabAsset: {fileID: 0}
->>>>>>> 1cb7f2f (quest interface implemented)

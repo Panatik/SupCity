@@ -8,13 +8,21 @@ public class HungerBar : MonoBehaviour
     public void SetNeeds(HumanNeeds needs)
     {
         linkedNeeds = needs;
-        hungerSlider.maxValue = needs.maxHunger;
+
+        if (hungerSlider == null)
+            Debug.LogError("HungerSlider is NULL in HungerBar!");
+        else
+            hungerSlider.maxValue = needs.maxHunger;
+
         UpdateUI();
-    }
+
+}
     public void UpdateUI()
     {
-        if (linkedNeeds != null)
+        if (linkedNeeds != null && hungerSlider != null)
+        {
             hungerSlider.value = linkedNeeds.hunger;
+        }
     }
     public void Show()
     {

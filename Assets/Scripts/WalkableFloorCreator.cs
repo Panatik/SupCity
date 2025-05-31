@@ -66,7 +66,6 @@ public class WalkableFloorCreator : MonoBehaviour
                 }
             }
         }
-
         CreateNodes();
     }
 
@@ -88,21 +87,14 @@ public class WalkableFloorCreator : MonoBehaviour
             }
         }
 
-        //CreateConnections();
+        CreateConnections();
 
         HousePlacer housePlacer = FindFirstObjectByType<HousePlacer>();
         if (housePlacer != null)
         {
             housePlacer.RebuildAllConnections();
         }
-
-        for (int i = 0; i < 20; i++) 
-        {
-            SpawnAI();
-        }
-
         canDrawGizmos = true;
-        StartCoroutine(SpawnAIWithDelay());
     }
 
     void CreateConnections()
@@ -161,15 +153,6 @@ public class WalkableFloorCreator : MonoBehaviour
     {
         if (from == to) { return; }
         from.connections.Add(to);
-    }
-
-    IEnumerator SpawnAIWithDelay() 
-    {
-        for (int i = 0; i < 5; i++) 
-        {
-            SpawnAI();
-            yield return new WaitForSeconds(5 * 60f);
-        }
     }
 
     void SpawnAI()
