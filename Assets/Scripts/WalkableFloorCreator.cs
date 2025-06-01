@@ -129,7 +129,7 @@ public class WalkableFloorCreator : MonoBehaviour
         for (int i = 0; i < 5; i++)
         {
             SpawnAI();
-            yield return new WaitForSeconds(5 * 60f);
+            yield return new WaitForSeconds(30f);
         }
     }
 

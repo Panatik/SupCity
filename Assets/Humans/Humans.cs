@@ -10,7 +10,7 @@ public class Human : MonoBehaviour
 
     private void Start()
     {
-        needs = new HumanNeeds(maxHunger, maxThirst, maxSleep);
+        needs = new HumanNeeds(maxHunger, maxThirst, maxSleep, this.gameObject);
     }
 
     private void Update()

@@ -13,7 +13,8 @@ public class HumanNeeds
     public float sleep;
     public float maxSleep;
 
-    public HumanNeeds(float maxHunger, float maxThirst, float maxSleep)
+    private GameObject human;
+    public HumanNeeds(float maxHunger, float maxThirst, float maxSleep, GameObject human)
     {
         this.maxHunger = maxHunger;
         this.hunger = maxHunger;
@@ -23,6 +24,8 @@ public class HumanNeeds
 
         this.maxSleep = maxSleep;
         this.sleep = maxSleep;
+
+        this.human = human;
     }
 
     public void UpdateNeeds(float rate, float thirstRate, float sleepRate)
@@ -34,6 +37,14 @@ public class HumanNeeds
         hunger = Mathf.Clamp(hunger, 0f, maxHunger);
         thirst = Mathf.Clamp(thirst, 0f, maxThirst);
         sleep = Mathf.Clamp(sleep, 0f, maxSleep);
+
+        if (hunger <= 0 || thirst <= 0 || sleep <= 0)
+        {
+            if (human != null)
+            {
+                GameObject.Destroy(human);
+            }
+        }
     }
     public void Eat(float amount)
     {
