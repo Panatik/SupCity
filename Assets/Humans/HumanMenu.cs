@@ -13,6 +13,8 @@ public class HumanMenu : MonoBehaviour
     {
         needs = n;
         UpdateUI();
+
+        needs.OnHumanDestroyed += OnHumanDestroyed;
     }
 
     public void UpdateUI()
@@ -23,4 +25,17 @@ public class HumanMenu : MonoBehaviour
         thirstSlider.value = needs.thirst;
         sleepSlider.value = needs.sleep;
     }
+
+    private void OnHumanDestroyed()
+    {
+        Destroy(gameObject);
+    }
+
+    private void OnDestroy()
+    {
+        if (needs != null)
+            needs.OnHumanDestroyed -= OnHumanDestroyed;
+    }
+
+
 }

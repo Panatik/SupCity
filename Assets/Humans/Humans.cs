@@ -8,9 +8,12 @@ public class Human : MonoBehaviour
     public float maxThirst = 100f;
     public float maxSleep = 100f;
 
+    public GameObject humanMenuPrefab;
+
     private void Start()
     {
         needs = new HumanNeeds(maxHunger, maxThirst, maxSleep, this.gameObject);
+
     }
 
     private void Update()
