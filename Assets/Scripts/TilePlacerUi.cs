@@ -67,20 +67,18 @@ public class TilePlacerUi : MonoBehaviour
     public void SelectObject(int index)
     {
         selectedTile = null;
-
         // Active le mode Place automatiquement
         currentMode = ToolMode.Place;
 
         if (currentPreview) Destroy(currentPreview);
 
         selectedIndex = index;
-
+        
         if (index >= 0 && index < placeableObjects.Length)
         {
             selectedObject = placeableObjects[index];
             currentPreview = Instantiate(previewObjects[index]);
             MakePreview(currentPreview);
-
             // Définis la taille automatiquement (ajuste selon ta logique ou un tableau)
             currentObjectSize = (selectedObject.name.Contains("Road")) || (selectedObject.GetComponent<PlaceableObject>().size.Equals(new Vector2Int(1, 1))) ? ObjectSize.OneByOne : ObjectSize.TwoByTwo;
         }
@@ -88,6 +86,7 @@ public class TilePlacerUi : MonoBehaviour
 
     public void SelectTile(int index)
     {
+        Debug.Log("Select Tile " + index);
         if (currentPreview)
             Destroy(currentPreview);
         selectedObject = null;
@@ -253,7 +252,7 @@ public class TilePlacerUi : MonoBehaviour
 
             PlaceableObject id = placed.AddComponent<PlaceableObject>();
             id.objectIndex = selectedIndex;
-
+            id.OnPlaced(selectedIndex);
             // Marque la cellule comme dernière utilisée
             lastPlacedObjectCell = cell;
 
@@ -411,6 +410,7 @@ public class TilePlacerUi : MonoBehaviour
 
         if (housePlacer != null)
             housePlacer.HandleHouseBlocking(draggedObject);
+
     }
 
     bool CanPlaceAt(Vector3Int cellPos)

@@ -37,7 +37,7 @@ public class QuestManager : MonoBehaviour
         QuestUIManager.Instance?.RefreshUI();
     }
 
-    public void ProgressQuest(string questId, int amount = 1)
+    public void ProgressQuest(int questId, int amount = 1)
     {
         QuestData quest = activeQuests.Find(q => q.id == questId);
         if (quest != null && !quest.isComplete)
@@ -50,7 +50,7 @@ public class QuestManager : MonoBehaviour
         }
     }
 
-    public void CompleteQuest(string questId) 
+    public void CompleteQuest(int questId) 
     {
         Debug.Log($"Quête {questId} complétée");
 
@@ -61,6 +61,7 @@ public class QuestManager : MonoBehaviour
             ShowNextQuests();
             QuestUIManager.Instance?.RefreshUI();
         }
+        HotbarManager.ShowNextPrefab(questId);
     }
 
     public void ClearQuests()

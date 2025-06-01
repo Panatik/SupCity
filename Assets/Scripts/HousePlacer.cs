@@ -23,7 +23,6 @@ public class HousePlacer : MonoBehaviour
             node.RemoveBlocker();
         }
         previouslyBlockedNodes.Clear();
-
         if (house != null)
         {
             Collider2D[] nodeHits = Physics2D.OverlapBoxAll(

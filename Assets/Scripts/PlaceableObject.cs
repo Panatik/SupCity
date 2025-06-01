@@ -16,4 +16,10 @@ public class PlaceableObject : MonoBehaviour
     {
         
     }
+
+    public virtual void OnPlaced(int selectedIndex)
+    {
+        Debug.Log($"{selectedIndex} a été placé !");
+        QuestManager.Instance.CompleteQuest(selectedIndex);
+    }
 }

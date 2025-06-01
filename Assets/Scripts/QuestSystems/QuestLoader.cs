@@ -15,114 +15,69 @@ public class QuestLoader : MonoBehaviour
         {
             new QuestData
             {
-                id = "build_campfire",
+                id = 3,
                 title = "Allumer un feu de camp",
                 description = "Construis ton premier feu de camp",
-                rewards = "abris",
+                rewards = "Récompenses : abris",
                 //icon = campfireIcon,
                 goal = 1
             },
             new QuestData
             {
-                id = "cut_tree",
-                title = "Couper un arbre",
-                description = "Abats ton premier arbre",
-                rewards = "routes",
-                //icon = treeIcon,
-                goal = 1
-            },
-            new QuestData
-            {
-                id = "build_house",
-                title = "Construire une maison",
-                description = "Érige ta première maison",
-                rewards = "baies, buissons de baies, cueilleurs de baies",
+                id = 4,
+                title = "Construire huit maisons",
+                description = "Érige tes premières maisons",
+                rewards = "Récompenses : routes",
                 //icon = houseIcon,
                 goal = 1
             },
 
             new QuestData
             {
-                id="build_berry_picker",
+                id=5,
+                title = "Place des routes !",
+                description = "Placer 4 routes pour réussir la mission",
+                rewards = "Récompenses : buisson de baies, bâtiment cueilleur de baies (angar rouge), graines",
+                //icon = berryIcon,
+                goal = 1
+            },
+
+            new QuestData
+            {
+                id=6,
                 title = "Construire un cueilleur de baies",
                 description = "Oh ces adorables berries, apparemment elles nous rendraient plus rapides...",
-                rewards = "eau et cabane de porteur d'eau",
+                rewards = "Récompenses : bois, fôrets, cabane pour bûcherons (angar bleu)",
                 //icon = berryIcon,
                 goal = 1
             },
 
             new QuestData
             {
-                id="build_waterkworker_hut",
-                title = "Construire une cabane à eau",
-                description = "Boire est essentiel pour survivre ! Il est donc naturel de rendre l'accès à l'eau aisé.",
-                rewards = "bois, fôrets, cabane pour bûcherons",
-                //icon = berryIcon,
-                goal = 1
-            },
-
-            new QuestData
-            {
-                id="build_wood_cutter",
+                id=7,
                 title = "Construire un bâtiment pour bûcheron",
                 description = "Le bois est une ressource si utile nous devrions commencer à en produire!",
-                rewards = "recherche sur l’eau, bâtiment laboratoire, recherche agricole, recherche en menuiserie",
+                rewards = "bâtiment pour outils (angar vert)",
                 //icon = berryIcon,
                 goal = 1
             },
 
             new QuestData
             {
-                id="build_thinking_range",
-                title = "Construire un bâtiment de recherche",
-                description = "Un bâtiment de recherche permettrait de faire des recherches sur les ressources qui nous entourent",
-                rewards = "recherche, artisannat du bois", //parchemins
+                id=8,
+                title = "Construire un bâtiment pour les outils",
+                description = "Un bâtiment pour construire des outils seraient pratique",
+                rewards = "bâtiment vêtements", //parchemins
                 //icon = berryIcon,
                 goal = 1
             },
 
             new QuestData
             {
-                id="research_stone",
-                title = "Faire des recherches sur la pierre",
-                description = "L'âge de pierre a commencé!",
-                rewards = "stones",
-                //icon = berryIcon,
-                goal = 1
-            },
-            new QuestData
-            {
-                id="research_masonery",
-                title = "Faires des recherches sur la maçonnerie",
-                description = "Faisons des recherches sur la maçonnerie afin d'accéder à de nouvelles îles!",
-                rewards = "briques",
-                //icon = berryIcon,
-                goal = 1
-            },
-            new QuestData
-            {
-                id="store_bread",
-                title = "Avoir 50 pains stockés",
-                description = "Un bon stock de nourriture permettrait d'avoir de la stabilité",
-                rewards = "amélioration upgrades",
-                //icon = berryIcon,
-                goal = 1
-            },
-            new QuestData
-            {
-                id="store_fish",
-                title = "Avoir 50 poissons en stock",
-                description = "Un bon stock de nourriture permettrait d'avoir de la stabilité",
-                rewards = "amélioration pour la pêche",
-                //icon = berryIcon,
-                goal = 1
-            },
-            new QuestData
-            {
-                id="store_5_tools",
-                title = "Stocké 5 outils en pierre",
-                description = "Produire des outils nous aiderait à nous améliorer",
-                rewards = "améliorations pour le tailleur de pierre et le fabricant d’outils en pierre",
+                id=9,
+                title = "Construire le bâtiment pour vêtements",
+                description = "Parce que même à l'âge de pierre faut bien être fashion!",
+                rewards = "les roches",
                 //icon = berryIcon,
                 goal = 1
             },

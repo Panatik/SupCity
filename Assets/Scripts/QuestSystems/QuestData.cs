@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class QuestData
 {
-    public string id;
+    public int id;
     public string title;
     public string description;
     public string rewards;
