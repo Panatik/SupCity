@@ -30,7 +30,6 @@ public class HumanMenu : MonoBehaviour
     {
         Destroy(gameObject);
     }
-
     private void OnDestroy()
     {
         if (needs != null)

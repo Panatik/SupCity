@@ -39,6 +39,16 @@ public class QuestManager : MonoBehaviour
 
     public void ProgressQuest(int questId, int amount = 1)
     {
+        if (questId >= 4 && questId <= 7)
+        {
+            questId = 4;
+        }
+
+        if (questId >= 1 && questId <= 3)
+        {
+            questId = 1;
+        }
+
         QuestData quest = activeQuests.Find(q => q.id == questId);
         if (quest != null && !quest.isComplete)
         {
@@ -52,7 +62,9 @@ public class QuestManager : MonoBehaviour
 
     public void CompleteQuest(int questId) 
     {
+        Debug.Log(questId);
         QuestData quest = activeQuests.Find(q => q.id == questId);
+        Debug.Log(quest);
         if (quest != null)
         {
             activeQuests.Remove(quest);

@@ -15,7 +15,7 @@ public class QuestLoader : MonoBehaviour
         {
             new QuestData
             {
-                id = 3,
+                id = 27,
                 title = "Allumer un feu de camp",
                 description = "Construis ton premier feu de camp",
                 rewards = "Récompenses : abris",
@@ -29,22 +29,22 @@ public class QuestLoader : MonoBehaviour
                 description = "Érige tes premières maisons",
                 rewards = "Récompenses : routes",
                 //icon = houseIcon,
-                goal = 1
+                goal = 8
             },
 
             new QuestData
             {
-                id=5,
+                id=1,
                 title = "Place des routes !",
                 description = "Placer 4 routes pour réussir la mission",
                 rewards = "Récompenses : buisson de baies, bâtiment cueilleur de baies (angar rouge), graines",
                 //icon = berryIcon,
-                goal = 1
+                goal = 4
             },
 
             new QuestData
             {
-                id=6,
+                id=9,
                 title = "Construire un cueilleur de baies",
                 description = "Oh ces adorables berries, apparemment elles nous rendraient plus rapides...",
                 rewards = "Récompenses : bois, fôrets, cabane pour bûcherons (angar bleu)",
@@ -74,7 +74,7 @@ public class QuestLoader : MonoBehaviour
 
             new QuestData
             {
-                id=9,
+                id=10,
                 title = "Construire le bâtiment pour vêtements",
                 description = "Parce que même à l'âge de pierre faut bien être fashion!",
                 rewards = "les roches",
