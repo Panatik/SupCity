@@ -52,8 +52,6 @@ public class QuestManager : MonoBehaviour
 
     public void CompleteQuest(int questId) 
     {
-        Debug.Log($"Quête {questId} complétée");
-
         QuestData quest = activeQuests.Find(q => q.id == questId);
         if (quest != null)
         {

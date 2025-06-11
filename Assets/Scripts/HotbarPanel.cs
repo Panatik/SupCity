@@ -1,5 +1,6 @@
-using UnityEngine;
 using System.Collections.Generic;
+using System.Linq;
+using UnityEngine;
 
 public class HotbarManager : MonoBehaviour
 {
@@ -14,7 +15,7 @@ public class HotbarManager : MonoBehaviour
     [SerializeField] private List<GameObject> prefabsQuest16;
 
     private int numberHouse = 0;
-    private int numerRoad = 0;
+    private int numberRoad = 0;
     private int berryPicker = 0;
     private int woodBuilding = 0;
 
@@ -65,8 +66,7 @@ public class HotbarManager : MonoBehaviour
 
     public static void ShowNextPrefab(int questId)
     {
-        Debug.Log("Show next prefab");
-        if(questId == 3)
+        if(questId == 27)
         {
             foreach (var prefab in Instance.prefabsQuest1)
             {
@@ -86,11 +86,11 @@ public class HotbarManager : MonoBehaviour
             }
         }
 
-        if (questId == 1)
+        if (questId >= 1 && questId <= 3)
         {
-            Instance.numerRoad++;
+            Instance.numberRoad++;
         }
-        if (Instance.numerRoad == 4)
+        if (Instance.numberRoad == 4)
         {
             foreach (var prefab in Instance.prefabsQuest3)
             {
@@ -98,26 +98,30 @@ public class HotbarManager : MonoBehaviour
             }
         }
 
-        if (questId == 10)
-        {
-            Instance.berryPicker++;
-        }
-        if (Instance.berryPicker == 1)
-        {
-            foreach (var prefab in Instance.prefabsQuest5)
-            {
+        if (questId == 9) {
+            print("quest 5 validée");
+            foreach (var prefab in Instance.prefabsQuest5) {
                 prefab.SetActive(true);
             }
         }
 
-        if (questId == 1)
-        {
-            Instance.berryPicker++;
+        if (questId == 7) {
+            print("quest 9 validée");
+            foreach (var prefab in Instance.prefabsQuest9) {
+                prefab.SetActive(true);
+            }
         }
-        if (Instance.berryPicker == 1)
-        {
-            foreach (var prefab in Instance.prefabsQuest5)
-            {
+
+        if (questId == 8) {
+            print("quest 11 validée");
+            foreach (var prefab in Instance.prefabsQuest11) {
+                prefab.SetActive(true);
+            }
+        }
+
+        if (questId == 10) {
+            print("quest 16 validée");
+            foreach (var prefab in Instance.prefabsQuest16) {
                 prefab.SetActive(true);
             }
         }
